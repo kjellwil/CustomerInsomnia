@@ -1,0 +1,2784 @@
+type: spec.insomnia.rest/5.0
+schema_version: "5.1"
+name: Lyse.SM24.Customer 1.0
+meta:
+  id: wrk_7681b09cfd0e4dc9bd277ae7bfc0ed0d
+  created: 1781610634813
+  modified: 1781610634813
+  description: ""
+collection:
+  - url: "{{ _.base_url }}/api/consumption/electricity"
+    name: Get electricity consumption
+    meta:
+      id: req_ee524e24ffb048f38473c84b8bf3c451
+      created: 1781610634821
+      modified: 1781610634821
+      isPrivate: false
+      description: Get electricity consumption for a customer and metering point.
+      sortKey: -1781610634821
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/electricity/hourly"
+    name: Get hourly electricity consumption
+    meta:
+      id: req_b38f095af3974ef4983545759cbe1f94
+      created: 1781610634822
+      modified: 1781610634822
+      isPrivate: false
+      description: Get hourly electricity consumption for a customer and metering point.
+      sortKey: -1781610634822
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/electricity/peaks"
+    name: Get electricity consumption peaks
+    meta:
+      id: req_31bdfe47654949da91a785087bd145e1
+      created: 1781610634823
+      modified: 1781610634823
+      isPrivate: false
+      description: "Get electricity consumption peaks for a customer and metering
+        point.\r
+
+        Will always return hourly consumption for full months, regardless of
+        resolution (alignes with \"capacity tier\" and \"consumption map\"
+        functionality)."
+      sortKey: -1781610634823
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/electricity/prices"
+    name: Get consumption prices
+    meta:
+      id: req_9d8737ade91a443d9917a32529a648fc
+      created: 1781610634824
+      modified: 1781610634824
+      isPrivate: false
+      description: Get computed consumption prices for a customer and metering point.
+      sortKey: -1781610634824
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+      - name: excludeVat
+        value: "true"
+        disabled: true
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/gas"
+    name: Get gas/heating/cooling consumption
+    meta:
+      id: req_e448bc76dae94a4b878d11ca9d49a822
+      created: 1781610634826
+      modified: 1781610634826
+      isPrivate: false
+      description: Get gas or district heating/cooling consumption for a customer and
+        metering point.
+      sortKey: -1781610634826
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/gas/csv"
+    name: Get CSV of gas/heating/cooling consumption
+    meta:
+      id: req_29b2195c2c6648eba225f2065df67143
+      created: 1781610634828
+      modified: 1781610634828
+      isPrivate: false
+      description: Get CSV file of gas or district heating/cooling consumption for a
+        customer and metering point.
+      sortKey: -1781610634828
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/billed/electricity"
+    name: Get billed electricity consumption
+    meta:
+      id: req_f68be19fa12046b6b63a7fbea23ea451
+      created: 1781610634829
+      modified: 1781610634829
+      isPrivate: false
+      description: Get billed electricity consumption for a customer and metering point.
+      sortKey: -1781610634829
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/billed/gas"
+    name: Get billed gas/heating/cooling consumption
+    meta:
+      id: req_1f8403306ec641cfa763f162f8906870
+      created: 1781610634830
+      modified: 1781610634830
+      isPrivate: false
+      description: Get billed gas or district heating/cooling consumption for a
+        customer and metering point.
+      sortKey: -1781610634830
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/consumption/billed/gas/csv"
+    name: Get CSV of billed gas/heating/cooling consumption
+    meta:
+      id: req_23d3631679774969b8ec55c0f0e739bf
+      created: 1781610634831
+      modified: 1781610634831
+      isPrivate: false
+      description: Get CSV file of billed gas or district heating/cooling consumption
+        for a customer and metering point.
+      sortKey: -1781610634831
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+      - name: fromDate
+        value: string
+        disabled: false
+      - name: toDate
+        value: string
+        disabled: false
+      - name: resolution
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/customer/meteringPoints"
+    name: Get metering points
+    meta:
+      id: req_055c49d22c2d4be98fa5f3eb849a1e2d
+      created: 1781610634833
+      modified: 1781610634833
+      isPrivate: false
+      description: Get active metering points for a customer.
+      sortKey: -1781610634833
+    method: GET
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/customer/meteringPoints/:meteringPointId/prices"
+    name: Get metering point prices
+    meta:
+      id: req_9e5377bfe7f64c988bcd70768d5cf3a5
+      created: 1781610634834
+      modified: 1781610634834
+      isPrivate: false
+      description: Get prices associated with a customer's metering point.
+      sortKey: -1781610634834
+    method: GET
+    parameters:
+      - name: priceDate
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/customer/serviceAgreements"
+    name: Get service agreements
+    meta:
+      id: req_1bab534cdc5e408a823dffe43c5a6836
+      created: 1781610634835
+      modified: 1781610634835
+      isPrivate: false
+      description: Get active service agreements for a customer.
+      sortKey: -1781610634835
+    method: GET
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/invoices"
+    name: Get invoice list
+    meta:
+      id: req_1849a3d4582a4e51b344aed224650048
+      created: 1781610634836
+      modified: 1781610634836
+      isPrivate: false
+      description: Get a list of invoices for a customer.
+      sortKey: -1781610634836
+    method: GET
+    parameters:
+      - name: fromDate
+        value: string
+        disabled: true
+      - name: toDate
+        value: string
+        disabled: true
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/invoices/:invoiceNumber/pdf"
+    name: Get invoice PDF
+    meta:
+      id: req_01382aad881b403baf8287cf784c1103
+      created: 1781610634837
+      modified: 1781610634837
+      isPrivate: false
+      description: Get a PDF for a specific invoice and customer.
+      sortKey: -1781610634837
+    method: GET
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/invoices/:invoiceNumber"
+    name: Get invoice
+    meta:
+      id: req_65dd20a22de842e992d7e94fbe757144
+      created: 1781610634837
+      modified: 1781610634837
+      isPrivate: false
+      description: Get a specific invoice for a customer.
+      sortKey: -1781610634837
+    method: GET
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/invoices/:invoiceNumber/forwardBilling/pdf"
+    name: Get forward billing PDF
+    meta:
+      id: req_d9ee7dc5e7e3467989c3652a0670dba6
+      created: 1781610634838
+      modified: 1781610634838
+      isPrivate: false
+      description: Get forward billing PDF(s) related to a specific invoice and customer.
+      sortKey: -1781610634838
+    method: GET
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/invoices/years"
+    name: Get invoice years
+    meta:
+      id: req_5c931fdb5dfd4bd2865ce4c8fc3b8fc0
+      created: 1781610634839
+      modified: 1781610634839
+      isPrivate: false
+      description: Get years where invoices are available for a customer.
+      sortKey: -1781610634839
+    method: GET
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/invoices/:invoiceNumber/postpone"
+    name: Postpone invoice
+    meta:
+      id: req_77c2bc3c291c422bb8416e53bb04e4e6
+      created: 1781610634841
+      modified: 1781610634841
+      isPrivate: false
+      description: Postpone an invoice for a customer. Returns 204 No Content on
+        success, 403 Forbidden if the invoice cannot be postponed.
+      sortKey: -1781610634841
+    method: POST
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/meterReading"
+    name: Get latest meter reading
+    meta:
+      id: req_46c567f8ea5b4bcf98d46a6328f2476f
+      created: 1781610634842
+      modified: 1781610634842
+      isPrivate: false
+      description: Get the latest meter reading for a metering point.
+      sortKey: -1781610634842
+    method: GET
+    parameters:
+      - name: meteringPointId
+        value: string
+        disabled: false
+    headers:
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/meterReading"
+    name: Submit meter reading
+    meta:
+      id: req_93fbee3a9736496aaa0716bbfe8a2e70
+      created: 1781610634843
+      modified: 1781610634843
+      isPrivate: false
+      description: Submit a new meter reading for a metering point.
+      sortKey: -1781610634843
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "meteringPointId": "string",
+          "readingDate": "string",
+          "readingValue": 0,
+          "readingCode": 0
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        disabled: false
+      - name: x-customerId
+        value: "0"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Authorized requests
+    meta:
+      id: fld_9a85a4b5aa924171ac6e086142968967
+      created: 1781610657321
+      modified: 1781611886500
+      sortKey: -1781610657321
+      description: ""
+    children:
+      - name: Account
+        meta:
+          id: fld_d7eeaf8c839744d081ea941a3928ba9a
+          created: 1781610675320
+          modified: 1781611896467
+          sortKey: -1781610675320
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/accounts"
+            name: Get accounts
+            meta:
+              id: req_89c119eed8fb42d9b283df408e5baafa
+              created: 1781610634820
+              modified: 1781610688035
+              isPrivate: false
+              description: Get accounts for an authenticated user.
+              sortKey: -1781610688012
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Customer
+        meta:
+          id: fld_fe91e3a160b149f4bc22308275866c3e
+          created: 1781612172527
+          modified: 1781612172527
+          sortKey: -1781612172527
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/customer/contactInfo"
+            name: Get contact info
+            meta:
+              id: req_929dd23cfe134021aa682ebe999a61c5
+              created: 1781610634832
+              modified: 1781612546222
+              isPrivate: false
+              description: Get contact info for a customer.
+              sortKey: -1781612185067
+            method: GET
+            headers:
+              - name: x-customerId
+                value: "{{ _.MomentId }}"
+                disabled: false
+              - name: x-isCustomerSystem
+                value: LES
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+    authentication:
+      type: oauth2
+      grantType: authorization_code
+      accessTokenUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/token
+      authorizationUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/authorize
+      clientId: 4e750747-fc62-4954-b16f-1ea328bace7d
+      clientSecret: n_88Q~xsIgAyrLzWtXhLmoWHs0lhK-g68WcdbaRz
+      scope: api://les-myb2b-test/Customer.Admin openid
+      redirectUrl: http://localhost:3000/api/auth/callback/azure-ad
+      usePkce: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e7aa52c53cfe9969906eb3f8c0d675b99944d362
+    created: 1781610635036
+    modified: 1781611890415
+  cookies:
+    - id: 67562af5-df03-4a76-b9ee-99cdc2b64f62
+      key: fpc
+      value: ApqMRijvY8BIkIjlwBPAYLPoQOfHAQAAAHE0w-EOAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: bf96bb90-cc1f-41e7-8a11-eac1299cc89e
+      key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 7b6f2d15-226f-4638-a127-9ed76300dc86
+      key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base environment
+  meta:
+    id: env_17f1fe40a69942cf98d4b3f83e3c98d1
+    created: 1781610634818
+    modified: 1781610634818
+    isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: localhost
+      meta:
+        id: env_28e6a05e74e545f6bbc59e4401d9efc3
+        created: 1781610634819
+        modified: 1781610726771
+        isPrivate: false
+        sortKey: 1781610634819
+      data:
+        scheme: http
+        base_path: ""
+        host: localhost:5249
+    - name: Local - Lyse Energi
+      meta:
+        id: env_09714862b3e244a8bc6b8a38f0348274
+        created: 1781610705931
+        modified: 1781612333787
+        isPrivate: false
+        sortKey: 1781610634869
+      data:
+        scheme: http
+        base_path: ""
+        host: localhost:5249
+        MomentId: "110170868"
+        DeliveryPointId: "707057500072171876"
+        Default_Year: "2026"
+spec:
+  contents:
+    openapi: 3.0.4
+    info:
+      title: Lyse.SM24.Customer
+      version: "1.0"
+    paths:
+      /api/accounts:
+        get:
+          tags:
+            - Account
+          summary: Get accounts
+          description: Get accounts for an authenticated user.
+          operationId: GetAccounts
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/AccountsModel"
+      /api/consumption/electricity:
+        get:
+          tags:
+            - Consumption
+          summary: Get electricity consumption
+          description: Get electricity consumption for a customer and metering point.
+          operationId: GetElectricityConsumption
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ConsumptionModel"
+      /api/consumption/electricity/hourly:
+        get:
+          tags:
+            - Consumption
+          summary: Get hourly electricity consumption
+          description: Get hourly electricity consumption for a customer and metering point.
+          operationId: GetHourlyElectricityConsumption
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/HourlyConsumptionModel"
+      /api/consumption/electricity/peaks:
+        get:
+          tags:
+            - Consumption
+          summary: Get electricity consumption peaks
+          description: "Get electricity consumption peaks for a customer and metering
+            point.\r
+
+            Will always return hourly consumption for full months, regardless of
+            resolution (alignes with \"capacity tier\" and \"consumption map\"
+            functionality)."
+          operationId: GetElectricityPeaksConsumption
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: HOURLY, DAILY, WEEKLY"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ConsumptionPeaksModel"
+      /api/consumption/electricity/prices:
+        get:
+          tags:
+            - Consumption
+          summary: Get consumption prices
+          description: Get computed consumption prices for a customer and metering point.
+          operationId: GetConsumptionPrices
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: HOURLY, WEEKLY, DAILY (1 month)"
+              required: true
+              schema:
+                type: string
+            - name: excludeVat
+              in: query
+              description: Exclude VAT from the price calculation. Default is false.
+              schema:
+                type: boolean
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionPricesModel"
+      /api/consumption/gas:
+        get:
+          tags:
+            - Consumption
+          summary: Get gas/heating/cooling consumption
+          description: Get gas or district heating/cooling consumption for a customer and
+            metering point.
+          operationId: GetGasConsumption
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/GasConsumptionModel"
+      /api/consumption/gas/csv:
+        get:
+          tags:
+            - Consumption
+          summary: Get CSV of gas/heating/cooling consumption
+          description: Get CSV file of gas or district heating/cooling consumption for a
+            customer and metering point.
+          operationId: GetGasConsumptionCsv
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/octet-stream:
+                  schema:
+                    $ref: "#/components/schemas/File"
+      /api/consumption/billed/electricity:
+        get:
+          tags:
+            - Consumption
+          summary: Get billed electricity consumption
+          description: Get billed electricity consumption for a customer and metering point.
+          operationId: GetBilledElectricityConsumption
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: DAILY (1 month), MONTHLY (1 year)"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/BilledConsumptionModel"
+      /api/consumption/billed/gas:
+        get:
+          tags:
+            - Consumption
+          summary: Get billed gas/heating/cooling consumption
+          description: Get billed gas or district heating/cooling consumption for a
+            customer and metering point.
+          operationId: GetBilledGasConsumption
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: DAILY (1 month), MONTHLY (1 year)"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/BilledGasConsumptionModel"
+      /api/consumption/billed/gas/csv:
+        get:
+          tags:
+            - Consumption
+          summary: Get CSV of billed gas/heating/cooling consumption
+          description: Get CSV file of billed gas or district heating/cooling consumption
+            for a customer and metering point.
+          operationId: GetBilledGasConsumptionCsv
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+            - name: resolution
+              in: query
+              description: "Supported resolutions: DAILY (1 month), MONTHLY (1 year)"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/octet-stream:
+                  schema:
+                    $ref: "#/components/schemas/File"
+      /api/customer/contactInfo:
+        get:
+          tags:
+            - Customer
+          summary: Get contact info
+          description: Get contact info for a customer.
+          operationId: GetContactInfo
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ContactInfoModel"
+      /api/customer/meteringPoints:
+        get:
+          tags:
+            - Customer
+          summary: Get metering points
+          description: Get active metering points for a customer.
+          operationId: GetMeteringPoints
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/MeteringPointModel"
+      /api/customer/meteringPoints/{meteringPointId}/prices:
+        get:
+          tags:
+            - Customer
+          summary: Get metering point prices
+          description: Get prices associated with a customer's metering point.
+          operationId: GetMeteringPointPrices
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: priceDate
+              in: query
+              description: "Prices active on this date. Format ISO-8601: YYYY-MM-DD"
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/MeteringPointPricesModel"
+            "404":
+              description: No prices found for the specified metering point and date.
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+            "422":
+              description: Unprocessable Content
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+      /api/customer/serviceAgreements:
+        get:
+          tags:
+            - Customer
+          summary: Get service agreements
+          description: Get active service agreements for a customer.
+          operationId: GetServiceAgreements
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ServiceAgreementsModel"
+      /api/invoices:
+        get:
+          tags:
+            - Invoice
+          summary: Get invoice list
+          description: Get a list of invoices for a customer.
+          operationId: GetInvoiceList
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: fromDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              schema:
+                type: string
+            - name: toDate
+              in: query
+              description: "Format ISO-8601: YYYY-MM-DD"
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/InvoiceListModel"
+            "404":
+              description: Not Found
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+      /api/invoices/{invoiceNumber}:
+        get:
+          tags:
+            - Invoice
+          summary: Get invoice
+          description: Get a specific invoice for a customer.
+          operationId: GetInvoice
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: invoiceNumber
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/InvoiceModel"
+            "404":
+              description: Not Found
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+      /api/invoices/{invoiceNumber}/pdf:
+        get:
+          tags:
+            - Invoice
+          summary: Get invoice PDF
+          description: Get a PDF for a specific invoice and customer.
+          operationId: GetInvoicePdf
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: invoiceNumber
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/pdf:
+                  schema:
+                    type: string
+                    format: binary
+            "404":
+              description: Not Found
+              content:
+                application/pdf:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+      /api/invoices/{invoiceNumber}/forwardBilling/pdf:
+        get:
+          tags:
+            - Invoice
+          summary: Get forward billing PDF
+          description: Get forward billing PDF(s) related to a specific invoice and
+            customer.
+          operationId: GetForwardBillingPdf
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: invoiceNumber
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/pdf:
+                  schema:
+                    type: string
+                    format: binary
+            "404":
+              description: Not Found
+              content:
+                application/pdf:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+      /api/invoices/years:
+        get:
+          tags:
+            - Invoice
+          summary: Get invoice years
+          description: Get years where invoices are available for a customer.
+          operationId: GetInvoiceYears
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/InvoiceYearsModel"
+      /api/invoices/{invoiceNumber}/postpone:
+        post:
+          tags:
+            - Invoice
+          summary: Postpone invoice
+          description: Postpone an invoice for a customer. Returns 204 No Content on
+            success, 403 Forbidden if the invoice cannot be postponed.
+          operationId: PostponeInvoice
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: invoiceNumber
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "204":
+              description: No Content
+            "403":
+              description: Forbidden
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+            "404":
+              description: Not Found
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+      /api/meterReading:
+        get:
+          tags:
+            - MeterReading
+          summary: Get latest meter reading
+          description: Get the latest meter reading for a metering point.
+          operationId: GetLatestMeterReading
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: meteringPointId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/MeterReadingModel"
+            "404":
+              description: Not Found
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+            "422":
+              description: Unprocessable Content
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+        post:
+          tags:
+            - MeterReading
+          summary: Submit meter reading
+          description: Submit a new meter reading for a metering point.
+          operationId: CreateMeterReading
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: The meter reading payload.
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/MeterReadingPayload"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/MeterReadingPayload"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/MeterReadingPayload"
+            required: true
+          responses:
+            "201":
+              description: Created
+            "400":
+              description: Bad Request
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+            "422":
+              description: Unprocessable Content
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+    components:
+      schemas:
+        AccountModel:
+          type: object
+          properties:
+            customerNumber:
+              type: string
+              nullable: true
+            legacyCustomerNumber:
+              type: string
+              nullable: true
+            type:
+              type: string
+              nullable: true
+            isGuest:
+              type: boolean
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            telephone:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            addresses:
+              type: array
+              items:
+                type: string
+              nullable: true
+            fullAddresses:
+              type: array
+              items:
+                $ref: "#/components/schemas/FullAddress"
+              nullable: true
+            serviceAgreements:
+              type: array
+              items:
+                type: string
+              nullable: true
+            birthday:
+              type: string
+              nullable: true
+            orgNumber:
+              type: string
+              nullable: true
+            hasConsentedToMarketing:
+              type: boolean
+          additionalProperties: false
+        AccountsModel:
+          type: object
+          properties:
+            accounts:
+              type: array
+              items:
+                $ref: "#/components/schemas/AccountModel"
+              nullable: true
+          additionalProperties: false
+        BilledConsumptionModel:
+          type: object
+          properties:
+            totalConsumption:
+              type: number
+              format: double
+            consumptions:
+              type: array
+              items:
+                $ref: "#/components/schemas/BilledYearConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        BilledGasConsumptionModel:
+          type: object
+          properties:
+            totalConsumption:
+              type: number
+              format: double
+            consumptions:
+              type: array
+              items:
+                $ref: "#/components/schemas/BilledGasYearConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        BilledGasMonthConsumptionModel:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            energyCostAmount:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+          additionalProperties: false
+        BilledGasYearConsumptionModel:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            energyCostAmount:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+            billedMonthlyPriceAvg:
+              type: number
+              format: double
+            priceTop:
+              $ref: "#/components/schemas/PriceTopGas"
+            months:
+              type: array
+              items:
+                $ref: "#/components/schemas/BilledGasMonthConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        BilledMonthConsumptionModel:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            consumptionLastYear:
+              type: number
+              format: double
+            amountLastYear:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            consumptionLastYearPct:
+              type: number
+              format: double
+            gridFeeCostAmount:
+              type: number
+              format: double
+            gridFeeCostCompensationAmount:
+              type: number
+              format: double
+            gridFeeCostCompensationAmountVat:
+              type: number
+              format: double
+            gridFeeCostNorwayPriceAmount:
+              type: number
+              format: double
+            energyCostAmount:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceUnit:
+              type: string
+              nullable: true
+          additionalProperties: false
+        BilledYearConsumptionModel:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            consumptionAnnualEstimation:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            consumptionLastYear:
+              type: number
+              format: double
+            consumptionLastYearPct:
+              type: number
+              format: double
+            gridFeeCostAmount:
+              type: number
+              format: double
+            gridFeeCostCompensationAmount:
+              type: number
+              format: double
+            gridFeeCostCompensationAmountVat:
+              type: number
+              format: double
+            gridFeeCostNorwayPriceAmount:
+              type: number
+              format: double
+            energyCostAmount:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceUnit:
+              type: string
+              nullable: true
+            billedMonthlyPriceAvg:
+              type: number
+              format: double
+            priceTop:
+              $ref: "#/components/schemas/PriceTopElectricity"
+            months:
+              type: array
+              items:
+                $ref: "#/components/schemas/BilledMonthConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        ConsumptionModel:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            totalConsumption:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceUnit:
+              type: string
+              nullable: true
+            energyCostCompensation:
+              type: number
+              format: double
+            energyCostCompensationAmount:
+              type: number
+              format: double
+            amountAfterCompensation:
+              type: number
+              format: double
+            months:
+              type: array
+              items:
+                $ref: "#/components/schemas/MonthConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        ConsumptionPeakModel:
+          type: object
+          properties:
+            timestamp:
+              type: string
+              nullable: true
+            consumption:
+              type: number
+              format: double
+          additionalProperties: false
+        ConsumptionPeaksModel:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            months:
+              type: array
+              items:
+                $ref: "#/components/schemas/MonthConsumptionPeaksModel"
+              nullable: true
+          additionalProperties: false
+        ConsumptionPricesModel:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            monthNumber:
+              type: integer
+              format: int32
+            energyConsumptionAmount:
+              type: number
+              format: double
+            energySurchargeAmount:
+              type: number
+              format: double
+            energyTotalAmount:
+              type: number
+              format: double
+            days:
+              type: array
+              items:
+                $ref: "#/components/schemas/DayConsumptionPricesModel"
+              nullable: true
+          additionalProperties: false
+        ContactInfoModel:
+          type: object
+          properties:
+            customerNumber:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            address:
+              type: string
+              nullable: true
+            birthday:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            telephoneNumber:
+              type: string
+              nullable: true
+          additionalProperties: false
+        DayConsumptionModel:
+          type: object
+          properties:
+            dayNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            consumptionHourlyAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceUnit:
+              type: string
+              nullable: true
+            energyCostCompensationAmount:
+              type: number
+              format: double
+            amountAfterCompensation:
+              type: number
+              format: double
+            consumptionPeak:
+              $ref: "#/components/schemas/ConsumptionPeakModel"
+            hours:
+              type: array
+              items:
+                $ref: "#/components/schemas/HourConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        DayConsumptionPeaksModel:
+          type: object
+          properties:
+            dayNumber:
+              type: integer
+              format: int32
+            consumptionPeak:
+              $ref: "#/components/schemas/PeakModel"
+            hours:
+              type: array
+              items:
+                $ref: "#/components/schemas/HourConsumptionPeaksModel"
+              nullable: true
+          additionalProperties: false
+        DayConsumptionPricesModel:
+          type: object
+          properties:
+            dayNumber:
+              type: integer
+              format: int32
+            energyConsumptionAmount:
+              type: number
+              format: double
+            energySurchargeAmount:
+              type: number
+              format: double
+            energyTotalAmount:
+              type: number
+              format: double
+            hours:
+              type: array
+              items:
+                $ref: "#/components/schemas/HourConsumptionPricesModel"
+              nullable: true
+          additionalProperties: false
+        DeliveryPointLocation:
+          type: object
+          properties:
+            latitude:
+              type: string
+              nullable: true
+            longitude:
+              type: string
+              nullable: true
+          additionalProperties: false
+        ErrorModel:
+          required:
+            - message
+          type: object
+          properties:
+            status:
+              type: integer
+              format: int32
+            message:
+              type: string
+              nullable: true
+            errors:
+              type: object
+              additionalProperties:
+                type: array
+                items:
+                  type: string
+              nullable: true
+          additionalProperties: false
+        File:
+          type: object
+          additionalProperties: false
+        ForwardBillingReferenceModel:
+          type: object
+          properties:
+            invoiceNumber:
+              type: string
+              nullable: true
+            productOwner:
+              type: string
+              nullable: true
+            meterPointId:
+              type: string
+              nullable: true
+            meterId:
+              type: string
+              nullable: true
+            gridOwnerOfficialId:
+              type: string
+              nullable: true
+            gridOwnerName:
+              type: string
+              nullable: true
+          additionalProperties: false
+        FullAddress:
+          type: object
+          properties:
+            streetName:
+              type: string
+              nullable: true
+            postalCode:
+              type: string
+              nullable: true
+            city:
+              type: string
+              nullable: true
+            country:
+              type: string
+              nullable: true
+          additionalProperties: false
+        GasConsumptionModel:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            totalConsumption:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            months:
+              type: array
+              items:
+                $ref: "#/components/schemas/GasMonthConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        GasConsumptionPeakModel:
+          type: object
+          properties:
+            timestamp:
+              type: string
+              nullable: true
+            consumption:
+              type: number
+              format: double
+          additionalProperties: false
+        GasDayConsumptionModel:
+          type: object
+          properties:
+            dayNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            consumptionHourlyAvg:
+              type: number
+              format: double
+            consumptionPeak:
+              $ref: "#/components/schemas/GasConsumptionPeakModel"
+            hours:
+              type: array
+              items:
+                $ref: "#/components/schemas/GasHourConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        GasHourConsumptionModel:
+          type: object
+          properties:
+            utcDateTime:
+              type: string
+              nullable: true
+            hourNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+          additionalProperties: false
+        GasMonthConsumptionModel:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            consumptionPeak:
+              $ref: "#/components/schemas/GasConsumptionPeakModel"
+            days:
+              type: array
+              items:
+                $ref: "#/components/schemas/GasDayConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        HourConsumptionModel:
+          type: object
+          properties:
+            utcDateTime:
+              type: string
+              nullable: true
+            hourNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceUnit:
+              type: string
+              nullable: true
+            energyCostCompensationAmount:
+              type: number
+              format: double
+            amountAfterCompensation:
+              type: number
+              format: double
+          additionalProperties: false
+        HourConsumptionPeaksModel:
+          type: object
+          properties:
+            utcDateTime:
+              type: string
+              nullable: true
+            consumption:
+              type: number
+              format: double
+            isPeak:
+              type: boolean
+          additionalProperties: false
+        HourConsumptionPricesModel:
+          type: object
+          properties:
+            utcDateTime:
+              type: string
+              nullable: true
+            hourNumber:
+              type: integer
+              format: int32
+            energyConsumptionAmount:
+              type: number
+              format: double
+            energySurchargeAmount:
+              type: number
+              format: double
+            energyTotalAmount:
+              type: number
+              format: double
+          additionalProperties: false
+        HourlyConsumptionDayModel:
+          type: object
+          properties:
+            dayNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            consumptionHourlyAvg:
+              type: number
+              format: double
+            hours:
+              type: array
+              items:
+                $ref: "#/components/schemas/HourlyConsumptionHourModel"
+              nullable: true
+          additionalProperties: false
+        HourlyConsumptionHourModel:
+          type: object
+          properties:
+            utcDateTime:
+              type: string
+              nullable: true
+            hourNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+          additionalProperties: false
+        HourlyConsumptionModel:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            months:
+              type: array
+              items:
+                $ref: "#/components/schemas/HourlyConsumptionMonthModel"
+              nullable: true
+          additionalProperties: false
+        HourlyConsumptionMonthModel:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            days:
+              type: array
+              items:
+                $ref: "#/components/schemas/HourlyConsumptionDayModel"
+              nullable: true
+          additionalProperties: false
+        InvoiceHeaderModel:
+          type: object
+          properties:
+            status:
+              type: string
+              nullable: true
+            number:
+              type: string
+              nullable: true
+            amount:
+              type: number
+              format: double
+            dueDate:
+              type: string
+              nullable: true
+            paidDate:
+              type: string
+              nullable: true
+            invoiceDate:
+              type: string
+              nullable: true
+            creditedDate:
+              type: string
+              nullable: true
+            toAccount:
+              type: string
+              nullable: true
+            services:
+              type: array
+              items:
+                type: string
+              nullable: true
+            due:
+              type: string
+              nullable: true
+            payment:
+              type: string
+              nullable: true
+            postponed:
+              type: boolean
+            canBePostponed:
+              type: boolean
+          additionalProperties: false
+        InvoiceLineModel:
+          type: object
+          properties:
+            title:
+              type: string
+              nullable: true
+            amount:
+              type: number
+              format: double
+            from:
+              type: string
+              nullable: true
+            to:
+              type: string
+              nullable: true
+          additionalProperties: false
+        InvoiceListModel:
+          type: object
+          properties:
+            months:
+              type: array
+              items:
+                $ref: "#/components/schemas/InvoiceMonthModel"
+              nullable: true
+            hasMore:
+              type: boolean
+          additionalProperties: false
+        InvoiceModel:
+          type: object
+          properties:
+            customerId:
+              type: integer
+              format: int64
+            status:
+              type: string
+              nullable: true
+            totalAmount:
+              type: number
+              format: double
+            number:
+              type: string
+              nullable: true
+            invoiceDate:
+              type: string
+              nullable: true
+            dueDate:
+              type: string
+              nullable: true
+            paidDate:
+              type: string
+              nullable: true
+            creditedDate:
+              type: string
+              nullable: true
+            toAccount:
+              type: string
+              nullable: true
+            kid:
+              type: string
+              nullable: true
+            fixedLines:
+              type: array
+              items:
+                $ref: "#/components/schemas/InvoiceLineModel"
+              nullable: true
+            variableLines:
+              type: array
+              items:
+                $ref: "#/components/schemas/InvoiceLineModel"
+              nullable: true
+            otherLines:
+              type: array
+              items:
+                $ref: "#/components/schemas/InvoiceLineModel"
+              nullable: true
+            taxBase:
+              type: number
+              format: double
+            taxFreeAmount:
+              type: number
+              format: double
+            tax:
+              type: number
+              format: double
+            canBePostponed:
+              type: boolean
+            due:
+              type: string
+              nullable: true
+            payment:
+              type: string
+              nullable: true
+            postponed:
+              type: boolean
+            services:
+              type: array
+              items:
+                type: string
+              nullable: true
+            hasGridOwnerInvoices:
+              type: boolean
+            forwardBillingReferences:
+              type: array
+              items:
+                $ref: "#/components/schemas/ForwardBillingReferenceModel"
+              nullable: true
+          additionalProperties: false
+        InvoiceMonthModel:
+          type: object
+          properties:
+            month:
+              type: integer
+              format: int32
+            year:
+              type: integer
+              format: int32
+            invoices:
+              type: array
+              items:
+                $ref: "#/components/schemas/InvoiceHeaderModel"
+              nullable: true
+          additionalProperties: false
+        InvoiceYearsModel:
+          type: object
+          properties:
+            years:
+              type: object
+              additionalProperties:
+                type: boolean
+              nullable: true
+          additionalProperties: false
+        MeterReadingModel:
+          type: object
+          properties:
+            meteringPointId:
+              type: string
+              nullable: true
+            readingDate:
+              type: string
+              format: date-time
+              nullable: true
+            meteringPointCounterId:
+              type: integer
+              format: int32
+            readingValue:
+              type: number
+              format: double
+          additionalProperties: false
+        MeterReadingPayload:
+          required:
+            - meteringPointId
+            - readingDate
+          type: object
+          properties:
+            meteringPointId:
+              type: string
+              nullable: true
+            readingDate:
+              type: string
+              nullable: true
+            readingValue:
+              type: number
+              format: double
+            readingCode:
+              type: integer
+              format: int32
+          additionalProperties: false
+        MeteringPointModel:
+          type: object
+          properties:
+            address:
+              type: string
+              nullable: true
+            zipCode:
+              type: string
+              nullable: true
+            city:
+              type: string
+              nullable: true
+            meterNumber:
+              type: string
+              nullable: true
+            meteringPointId:
+              type: string
+              nullable: true
+            category:
+              type: string
+              nullable: true
+            isManualRead:
+              type: boolean
+            isPlusCustomer:
+              type: boolean
+            tariffId:
+              type: string
+              nullable: true
+            isSpotPrice:
+              type: boolean
+            deliveryPointId:
+              type: integer
+              format: int32
+            deliveryPointCounterId:
+              type: integer
+              format: int32
+            gridOwnerId:
+              type: string
+              nullable: true
+            gridOwner:
+              type: string
+              nullable: true
+            nordPoolPriceArea:
+              type: string
+              nullable: true
+            numberOfDigits:
+              type: integer
+              format: int32
+            numberOfDecimals:
+              type: integer
+              format: int32
+            unit:
+              type: string
+              nullable: true
+            deliveryPointLocation:
+              $ref: "#/components/schemas/DeliveryPointLocation"
+            hasHourlyConsumption:
+              type: boolean
+          additionalProperties: false
+        MeteringPointPriceModel:
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            type:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            fromDate:
+              type: string
+              nullable: true
+            amountDenomination:
+              type: string
+              nullable: true
+            amountExclVat:
+              type: number
+              format: double
+            amountInclVat:
+              type: number
+              format: double
+          additionalProperties: false
+        MeteringPointPricesModel:
+          type: object
+          properties:
+            sourceType:
+              type: string
+              nullable: true
+            sourceId:
+              type: string
+              nullable: true
+            sourceFromDate:
+              type: string
+              nullable: true
+            sourceToDate:
+              type: string
+              nullable: true
+            tariffId:
+              type: string
+              nullable: true
+            prices:
+              type: array
+              items:
+                $ref: "#/components/schemas/MeteringPointPriceModel"
+              nullable: true
+          additionalProperties: false
+        MonthConsumptionModel:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            consumption:
+              type: number
+              format: double
+            amount:
+              type: number
+              format: double
+            consumptionDailyAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceAvg:
+              type: number
+              format: double
+            energyCostConsumptionPriceUnit:
+              type: string
+              nullable: true
+            energyCostCompensation:
+              type: number
+              format: double
+            energyCostCompensationAmount:
+              type: number
+              format: double
+            amountAfterCompensation:
+              type: number
+              format: double
+            consumptionPeak:
+              $ref: "#/components/schemas/ConsumptionPeakModel"
+            days:
+              type: array
+              items:
+                $ref: "#/components/schemas/DayConsumptionModel"
+              nullable: true
+          additionalProperties: false
+        MonthConsumptionPeaksModel:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            consumptionPeaks:
+              type: array
+              items:
+                $ref: "#/components/schemas/PeakModel"
+              nullable: true
+            consumptionPeaksAvg:
+              type: number
+              format: double
+            capacityTier:
+              type: integer
+              format: int32
+            days:
+              type: array
+              items:
+                $ref: "#/components/schemas/DayConsumptionPeaksModel"
+              nullable: true
+          additionalProperties: false
+        NewProduct:
+          type: object
+          properties:
+            productId:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            category:
+              type: string
+              nullable: true
+          additionalProperties: false
+        PeakModel:
+          type: object
+          properties:
+            dayNumber:
+              type: integer
+              format: int32
+            utcDateTime:
+              type: string
+              nullable: true
+            consumption:
+              type: number
+              format: double
+          additionalProperties: false
+        PriceTopElectricity:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            amount:
+              type: number
+              format: double
+          additionalProperties: false
+        PriceTopGas:
+          type: object
+          properties:
+            monthNumber:
+              type: integer
+              format: int32
+            amount:
+              type: number
+              format: double
+          additionalProperties: false
+        ServiceAgreementModel:
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            category:
+              type: string
+              nullable: true
+            owner:
+              type: string
+              nullable: true
+            meterNumber:
+              type: string
+              nullable: true
+            meteringPointId:
+              type: string
+              nullable: true
+            started:
+              type: string
+              nullable: true
+            dailyPrice:
+              type: string
+              nullable: true
+            establishmentPrice:
+              type: string
+              nullable: true
+            fullPrice:
+              type: string
+              nullable: true
+            kWhPrice:
+              type: string
+              nullable: true
+            monthlyPrice:
+              type: string
+              nullable: true
+            productId:
+              type: string
+              nullable: true
+            isFixedPrice:
+              type: boolean
+            housingType:
+              type: string
+              nullable: true
+            pendingProduct:
+              $ref: "#/components/schemas/NewProduct"
+          additionalProperties: false
+        ServiceAgreementsModel:
+          type: object
+          properties:
+            address:
+              type: string
+              nullable: true
+            serviceAgreements:
+              type: array
+              items:
+                $ref: "#/components/schemas/ServiceAgreementModel"
+              nullable: true
+          additionalProperties: false
+      securitySchemes:
+        Bearer:
+          type: http
+          description: Please enter token
+          scheme: Bearer
+          bearerFormat: JWT
+  meta:
+    id: spc_3b81a4bbaa014f1983d85a257b2abbb3
+    created: 1781610634815
+    modified: 1781610634816

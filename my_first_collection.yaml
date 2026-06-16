@@ -1,0 +1,81 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: MyB2B - Moment
+meta:
+  id: wrk_01230eb7458e483aa99a72c360f1540c
+  created: 1781530091794
+  modified: 1781530121079
+  description: ""
+collection:
+  - url: ""
+    name: Azure AD Token Authentication
+    meta:
+      id: req_cad170eafe4741a2a7d55a0c157585c8
+      created: 1781530091825
+      modified: 1781530447927
+      isPrivate: false
+      description: ""
+      sortKey: -1781530091825
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.6.0
+        description: ""
+        disabled: false
+    authentication:
+      type: oauth2
+      grantType: authorization_code
+      accessTokenUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/token
+      authorizationUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/authorize
+      clientId: 4e750747-fc62-4954-b16f-1ea328bace7d
+      clientSecret: n_88Q~xsIgAyrLzWtXhLmoWHs0lhK-g68WcdbaRz
+      scope: api://les-myb2b-test/Customer.Admin openid
+      redirectUrl: http://localhost:3000/api/auth/callback/azure-ad
+      useDefaultBrowser: false
+      usePkce: true
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_77d8452969260b96b8d53b864e2d45ffaea362de
+    created: 1781530091805
+    modified: 1781607532685
+  cookies:
+    - id: a25b5754-e36e-47be-9699-319da155d3bb
+      key: fpc
+      value: ArJq6UGHzdBPjN4xpUb4kbXoQOfHAQAAAFwjw-EOAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 935ce43a-2fc9-4fbf-9fbd-99a78ce69ce2
+      key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: d5f3ddef-c5e6-4b85-8792-d448366dbf96
+      key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_77d8452969260b96b8d53b864e2d45ffaea362de
+    created: 1781530091803
+    modified: 1781530091803
+    isPrivate: false

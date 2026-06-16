@@ -1,0 +1,532 @@
+type: spec.insomnia.rest/5.0
+schema_version: "5.1"
+name: LES.Aurora.Backend 1.0
+meta:
+  id: wrk_d98043924ea44ed9aef2d59c8e703383
+  created: 1781532220107
+  modified: 1781532220107
+  description: ""
+collection:
+  - url: "{{ _.base_url }}/api/company/list"
+    name: Get companies
+    meta:
+      id: req_ff641a47774e4eaabbe7a29cb27f4ec6
+      created: 1781532220118
+      modified: 1781532220118
+      isPrivate: false
+      description: Get all companies.
+      sortKey: -1781532220118
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/company"
+    name: Get company
+    meta:
+      id: req_28002df98d134944b112b89f9308da95
+      created: 1781532220121
+      modified: 1781606432750
+      isPrivate: false
+      description: Get company by internal or external id
+      sortKey: -1781532220121
+    method: GET
+    parameters:
+      - name: companyId
+        value: "369"
+        disabled: true
+      - name: externalId
+        value: "110197826"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/api/trades"
+    name: Get trades
+    meta:
+      id: req_7b7c85d31bed4f788d71213ac5fd41fd
+      created: 1781532220123
+      modified: 1781606451731
+      isPrivate: false
+      description: Get trades by query parameters.
+      sortKey: -1781532220123
+    method: GET
+    parameters:
+      - name: companyId
+        value: "369"
+        disabled: false
+      - name: schema
+        value: PowerForward
+        disabled: true
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_029c9eb80896295405148ab1913c925be88867f7
+    created: 1781532220360
+    modified: 1781532220360
+environments:
+  name: Base environment
+  meta:
+    id: env_e3b6d1ff5d6143c99d2657c079d87000
+    created: 1781532220116
+    modified: 1781532220116
+    isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: localhost
+      meta:
+        id: env_30bae630e738401198432c07c796db6d
+        created: 1781532270595
+        modified: 1781532399180
+        isPrivate: false
+        sortKey: 1781532270595
+      data:
+        scheme: http
+        base_path: ""
+        host: localhost:5249
+spec:
+  contents:
+    openapi: 3.0.4
+    info:
+      title: LES.Aurora.Backend
+      version: "1.0"
+    paths:
+      /api/company/list:
+        get:
+          tags:
+            - Company
+          summary: Get companies
+          description: Get all companies.
+          operationId: GetCompanies
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CompaniesModel"
+      /api/company:
+        get:
+          tags:
+            - Company
+          summary: Get company
+          description: Get company by internal or external id
+          operationId: GetCompanyByExternalId
+          parameters:
+            - name: companyId
+              in: query
+              description: Internal (Aurora) id of the company
+              schema:
+                type: integer
+                format: int32
+            - name: externalId
+              in: query
+              description: External id of the company
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CompanyModel"
+            "404":
+              description: Not Found
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+      /api/trades:
+        get:
+          tags:
+            - Trades
+          summary: Get trades
+          description: Get trades by query parameters.
+          operationId: QueryTrades
+          parameters:
+            - name: companyId
+              in: query
+              description: Aurora company id
+              schema:
+                type: integer
+                format: int32
+            - name: schema
+              in: query
+              description: "Trades schema (e.g: PowerForward)"
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/TradesModel"
+            "404":
+              description: Not Found
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ErrorModel"
+    components:
+      schemas:
+        CompaniesModel:
+          type: object
+          properties:
+            companies:
+              type: array
+              items:
+                $ref: "#/components/schemas/CompanyListModel"
+              nullable: true
+          additionalProperties: false
+        CompanyListModel:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+              nullable: true
+            externalId:
+              type: string
+              nullable: true
+            companyType:
+              type: string
+              nullable: true
+            organizationNumber:
+              type: string
+              nullable: true
+            status:
+              type: string
+              nullable: true
+          additionalProperties: false
+        CompanyModel:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+              nullable: true
+            externalId:
+              type: string
+              nullable: true
+            companyType:
+              type: string
+              nullable: true
+            organizationNumber:
+              type: string
+              nullable: true
+            status:
+              type: string
+              nullable: true
+          additionalProperties: false
+        ErrorModel:
+          required:
+            - message
+          type: object
+          properties:
+            status:
+              type: integer
+              format: int32
+            message:
+              type: string
+              nullable: true
+            errors:
+              type: object
+              additionalProperties:
+                type: array
+                items:
+                  type: string
+              nullable: true
+          additionalProperties: false
+        TradeAnnotationsModel:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                type: string
+              nullable: true
+          additionalProperties: false
+        TradeElvizInfoModel:
+          type: object
+          properties:
+            elvizId:
+              type: integer
+              format: int64
+              nullable: true
+            elvizSource:
+              type: string
+              nullable: true
+          additionalProperties: false
+        TradeFeeModel:
+          type: object
+          properties:
+            type:
+              type: string
+              nullable: true
+            amount:
+              type: number
+              format: double
+              nullable: true
+            unit:
+              type: string
+              nullable: true
+            payOrReceive:
+              type: string
+              nullable: true
+          additionalProperties: false
+        TradeIdsModel:
+          type: object
+          properties:
+            externalId:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+          additionalProperties: false
+        TradeLinkModel:
+          type: object
+          properties:
+            type:
+              type: string
+              nullable: true
+            cascadeDate:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            id:
+              type: integer
+              format: int64
+              nullable: true
+            targetType:
+              type: string
+              nullable: true
+          additionalProperties: false
+        TradeMetadataModel:
+          type: object
+          properties:
+            registered:
+              type: string
+              nullable: true
+            lastUpdated:
+              type: string
+              nullable: true
+            lastUpdatedBy:
+              type: string
+              nullable: true
+            revisionId:
+              type: string
+              nullable: true
+            revisionNumber:
+              type: integer
+              format: int32
+              nullable: true
+          additionalProperties: false
+        TradeModel:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            isMirrored:
+              type: boolean
+              nullable: true
+            locked:
+              type: boolean
+              nullable: true
+            schema:
+              type: string
+              nullable: true
+            deleted:
+              type: boolean
+              nullable: true
+            properties:
+              $ref: "#/components/schemas/TradePropertiesModel"
+            metadata:
+              $ref: "#/components/schemas/TradeMetadataModel"
+          additionalProperties: false
+        TradePartiesModel:
+          type: object
+          properties:
+            counterpartyBookId:
+              type: integer
+              format: int64
+              nullable: true
+            counterpartyCompanyId:
+              type: integer
+              format: int64
+              nullable: true
+            tradeBookId:
+              type: integer
+              format: int64
+              nullable: true
+            tradeCompanyId:
+              type: integer
+              format: int64
+              nullable: true
+            traderId:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties: false
+        TradePropertiesModel:
+          type: object
+          properties:
+            tradeTerms:
+              $ref: "#/components/schemas/TradeTermsModel"
+            workflows:
+              $ref: "#/components/schemas/TradeWorkflowsModel"
+            parties:
+              $ref: "#/components/schemas/TradePartiesModel"
+            elvizInfo:
+              $ref: "#/components/schemas/TradeElvizInfoModel"
+            ids:
+              $ref: "#/components/schemas/TradeIdsModel"
+            fees:
+              type: array
+              items:
+                $ref: "#/components/schemas/TradeFeeModel"
+              nullable: true
+            annotations:
+              $ref: "#/components/schemas/TradeAnnotationsModel"
+            timeseries:
+              type: array
+              items:
+                $ref: "#/components/schemas/TradeTimeseriesModel"
+              nullable: true
+            links:
+              type: array
+              items:
+                $ref: "#/components/schemas/TradeLinkModel"
+              nullable: true
+          additionalProperties: false
+        TradeTermsModel:
+          type: object
+          properties:
+            buyOrSell:
+              type: string
+              nullable: true
+            commodity:
+              type: string
+              nullable: true
+            fromDate:
+              type: string
+              nullable: true
+            load:
+              type: string
+              nullable: true
+            marketReference:
+              type: string
+              nullable: true
+            periodName:
+              type: string
+              nullable: true
+            price:
+              type: number
+              format: double
+              nullable: true
+            priceArea:
+              type: string
+              nullable: true
+            priceUnit:
+              type: string
+              nullable: true
+            product:
+              type: string
+              nullable: true
+            quantity:
+              type: number
+              format: double
+              nullable: true
+            quantityUnit:
+              type: string
+              nullable: true
+            settlement:
+              type: string
+              nullable: true
+            timezone:
+              type: string
+              nullable: true
+            toDate:
+              type: string
+              nullable: true
+            tradeDate:
+              type: string
+              nullable: true
+            tradeTimeOfDay:
+              type: string
+              nullable: true
+            tradeType:
+              type: string
+              nullable: true
+            venue:
+              type: string
+              nullable: true
+            volumeModel:
+              type: string
+              nullable: true
+          additionalProperties: false
+        TradeTimeseriesModel:
+          type: object
+          properties:
+            type:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            singleVersion:
+              type: boolean
+              nullable: true
+            timeseriesId:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties: false
+        TradeWorkflowsModel:
+          type: object
+          properties:
+            confirmed:
+              type: boolean
+              nullable: true
+          additionalProperties: false
+        TradesModel:
+          type: object
+          properties:
+            trades:
+              type: array
+              items:
+                $ref: "#/components/schemas/TradeModel"
+              nullable: true
+          additionalProperties: false
+  meta:
+    id: spc_6e0fbf82578f40bbb6f304e62bc78a75
+    created: 1781532220109
+    modified: 1781532220111

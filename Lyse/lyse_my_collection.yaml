@@ -1,0 +1,68 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Nordpool Backend
+meta:
+  id: wrk_e70f7b3f79dc48a6af7c0f2865ab5f54
+  created: 1781531216524
+  modified: 1781531667844
+  description: Collection is complete. Missing environments besides
+    localhost.Missing username / pw to get the service running locally
+collection:
+  - url: "{{ _.Base_Url }}/api/prices"
+    name: Get Prices
+    meta:
+      id: req_6d4b2d3414894d3093e0831639b627d3
+      created: 1781531222138
+      modified: 1781606740030
+      isPrivate: false
+      description: ""
+      sortKey: -1781531222138
+    method: GET
+    parameters:
+      - name: fromDate
+        value: 2026-01-01
+      - name: toDate
+        value: 2026-01-05
+      - name: priceArea
+        value: NO1
+        disabled: false
+      - name: resolution
+        value: 1H
+      - name: excludeVat
+        value: "false"
+    headers:
+      - name: User-Agent
+        value: insomnia/12.6.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_2d71679b87085a6ed4fc6aec0f945d6b3717fdbb
+    created: 1781531216543
+    modified: 1781531216543
+environments:
+  name: Base Environment
+  meta:
+    id: env_2d71679b87085a6ed4fc6aec0f945d6b3717fdbb
+    created: 1781531216542
+    modified: 1781531216541
+    isPrivate: false
+  subEnvironments:
+    - name: localhost
+      meta:
+        id: env_d02430ded57d457eafa78be5beec04dc
+        created: 1781531372183
+        modified: 1781531397888
+        isPrivate: false
+        sortKey: 1781531372183
+      data:
+        Base_Url: http://localhost:25131

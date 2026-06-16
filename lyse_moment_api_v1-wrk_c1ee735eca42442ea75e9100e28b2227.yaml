@@ -1,0 +1,4370 @@
+type: spec.insomnia.rest/5.0
+schema_version: "5.1"
+name: Lyse.Moment.Api v1
+meta:
+  id: wrk_c1ee735eca42442ea75e9100e28b2227
+  created: 1781607763641
+  modified: 1781610407705
+  description: V1 API - Works
+collection:
+  - name: Consumption
+    meta:
+      id: fld_367479d48ab34a53859c72f5a278712c
+      created: 1781607931462
+      modified: 1781607931462
+      sortKey: -1781607931462
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/hourly"
+        name: Get hourly consumption and cost
+        meta:
+          id: req_5bacd26f22e14153ae0261329165e958
+          created: 1781607763649
+          modified: 1781610119262
+          isPrivate: false
+          description: Get hourly consumption and cost, for a specific day.
+          sortKey: -1781610096892.5625
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/hourly/download"
+        name: Download hourly consumption
+        meta:
+          id: req_f535e66729d54e07b9649ff33f3b131a
+          created: 1781607763651
+          modified: 1781610117793
+          isPrivate: false
+          description: Download a CSV file of the hourly consumption.
+          sortKey: -1781610096894.125
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/daily"
+        name: Get daily consumption and cost
+        meta:
+          id: req_82580f3216c945998cba461f03af3772
+          created: 1781607763653
+          modified: 1781610115061
+          isPrivate: false
+          description: Get daily consumption and cost, for a specific month.
+          sortKey: -1781610096897.25
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/daily/download"
+        name: Download daily consumption
+        meta:
+          id: req_810d0c9178c74d358be940e2d0060821
+          created: 1781607763654
+          modified: 1781610111103
+          isPrivate: false
+          description: Download a CSV file of the daily consumption.
+          sortKey: -1781610096903.5
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: getHourlyResult
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/weekly"
+        name: Get daily consumption and cost for week
+        meta:
+          id: req_5e3e1f32dfde4b898b69a4419263a0ee
+          created: 1781607763655
+          modified: 1781610103610
+          isPrivate: false
+          description: Get daily consumption and cost, for a specific week number.
+          sortKey: -1781610096891
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/weekly/download"
+        name: Download daily consumption for week
+        meta:
+          id: req_180cc42cd6f247e7a6deabe5f8664d46
+          created: 1781607763656
+          modified: 1781610101999
+          isPrivate: false
+          description: Download a CSV file of the daily consumption, for a specific week
+            number.
+          sortKey: -1781610096866
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/monthly"
+        name: Get monthly consumption and cost
+        meta:
+          id: req_3a47021b48bc4ea79651705786cb43a0
+          created: 1781607763657
+          modified: 1781610099825
+          isPrivate: false
+          description: Get monthly consumption and cost, for a specific year.
+          sortKey: -1781610096916
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/:deliveryPointId/monthly/download"
+        name: Download monthly consumption
+        meta:
+          id: req_dc8524bba7b24968acc702d1bc049200
+          created: 1781607763658
+          modified: 1781610096846
+          isPrivate: false
+          description: Download a CSV file of the monthly consumption.
+          sortKey: -1781610096816
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Consumption Delivery Point Group
+    meta:
+      id: fld_8d2ef6bacf7e4352b543b799306f7628
+      created: 1781607945676
+      modified: 1781607945676
+      sortKey: -1781607945676
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/consumption/deliverypointgroup/hourly"
+        name: Get aggregated hourly consumption and cost for a group of delivery points
+        meta:
+          id: req_ab5cfcb717ea499cb1b123c94ecf03c4
+          created: 1781607763660
+          modified: 1781610083809
+          isPrivate: false
+          description: Get aggregated hourly consumption and cost for a group of delivery
+            points, for a specific day.
+          sortKey: -1781610074698
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/deliverypointgroup/daily"
+        name: Get aggregated daily consumption and cost for a group of delivery points
+        meta:
+          id: req_f1b190e2491949c684ddbf0e114e795b
+          created: 1781607763661
+          modified: 1781610080993
+          isPrivate: false
+          description: Get aggregated daily consumption and cost for a group of delivery
+            points, for a specific month.
+          sortKey: -1781610074598
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/deliverypointgroup/weekly"
+        name: Get aggregated daily consumption and cost for week and a group of delivery
+          points
+        meta:
+          id: req_d949607944b045eaaf71511bf75d707e
+          created: 1781607763662
+          modified: 1781610077969
+          isPrivate: false
+          description: Get aggregated daily consumption and cost for a group of delivery
+            points, for a specific week number.
+          sortKey: -1781610074498
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/consumption/deliverypointgroup/monthly"
+        name: Get aggregated monthly consumption and cost for year and a group of
+          delivery points
+        meta:
+          id: req_091f7410d21f43dcae2f4c14a21efe12
+          created: 1781607763663
+          modified: 1781610074443
+          isPrivate: false
+          description: Get aggregated monthly consumption and cost for a group of delivery
+            points, for a specific year.
+          sortKey: -1781610074398
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Invoice
+    meta:
+      id: fld_97a47122fed3466292fe1e027a4784de
+      created: 1781607970359
+      modified: 1781607970359
+      sortKey: -1781607970359
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/invoice/documentlink"
+        name: Get a link to an invoice file
+        meta:
+          id: req_8351bfc1788e43d4bd572539313ec5df
+          created: 1781607763672
+          modified: 1781610020160
+          isPrivate: false
+          description: Get a link to an invoice file.
+          sortKey: -1781610020131
+        method: GET
+        parameters:
+          - name: accountId
+            value: "0"
+            disabled: false
+          - name: ocrNumber
+            value: string
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Peak Volume
+    meta:
+      id: fld_c99e8d1c72cf46609687d2e000c792f8
+      created: 1781607976278
+      modified: 1781610014301
+      sortKey: -1781607976278
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/volume/peaks/:deliveryPointId/hourly"
+        name: Get hourly volumes and peak details
+        meta:
+          id: req_481f5f36a4c04d589126815e7bf63c17
+          created: 1781607763672
+          modified: 1781610027255
+          isPrivate: false
+          description: Get hourly volumes for a specific day, including its peak volume
+            and monthly peak volume details.
+          sortKey: -1781610027219
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+          - name: monthlyPeakVolumeCount
+            value: "3"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/peaks/:deliveryPointId/daily"
+        name: Get daily peak volume and peak details.
+        meta:
+          id: req_5e29275c084f4dc7b7be6f23ba31ccfc
+          created: 1781607763673
+          modified: 1781610029017
+          isPrivate: false
+          description: Get daily peak volume for each day in a specific month, including
+            monthly peak volume details.
+          sortKey: -1781610027319
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: monthlyPeakVolumeCount
+            value: "3"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/peaks/:deliveryPointId/weekly"
+        name: Get daily peak volume for week and peak details
+        meta:
+          id: req_729d4774f3be433c8f3db8a0f5d84b7e
+          created: 1781607763674
+          modified: 1781610030646
+          isPrivate: false
+          description: Get daily peak volume for each day in a specific week (number),
+            including monthly peak volume details.
+          sortKey: -1781610027419
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+          - name: monthlyPeakVolumeCount
+            value: "3"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Product
+    meta:
+      id: fld_6d5575a949ec4cd088b35caa4ed9c339
+      created: 1781607983503
+      modified: 1781607983503
+      sortKey: -1781607983503
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/product/order/add"
+        name: Submit a product order
+        meta:
+          id: req_27c482a723d94474b8fe401274e83e64
+          created: 1781607763675
+          modified: 1781609660461
+          isPrivate: false
+          description: Submit a product order. Orders will be created for each of the
+            customers active delivery points.
+          sortKey: -1781609655590
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "productCode": "string"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            disabled: false
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/product/order/:orderId/status"
+        name: Get order processing status
+        meta:
+          id: req_0799cb6f6a86449e8a9102cf8fcc264e
+          created: 1781607763676
+          modified: 1781609655520
+          isPrivate: false
+          description: Get the current processing status for an order.
+          sortKey: -1781609655490
+        method: GET
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Volume
+    meta:
+      id: fld_1f45e34ad38441b2acd804c0caed6509
+      created: 1781607992255
+      modified: 1781608151509
+      sortKey: -1781607992255
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/hourly"
+        name: Get hourly volume
+        meta:
+          id: req_9775bafa07a8404184749f2e4fe5079a
+          created: 1781607763677
+          modified: 1781608139520
+          isPrivate: false
+          description: Get hourly volume, for a specific day.
+          sortKey: -1781608107038.5
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/hourly/download"
+        name: Download hourly volume.
+        meta:
+          id: req_2acb159d9c534903856a42c35466508a
+          created: 1781607763678
+          modified: 1781608136188
+          isPrivate: false
+          description: Download a CSV file of the hourly volume.
+          sortKey: -1781608107013.5
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/daily"
+        name: Get daily volume
+        meta:
+          id: req_41bb17d85ba44b059e50e410a8f7866a
+          created: 1781607763679
+          modified: 1781608126303
+          isPrivate: false
+          description: Get daily volume, for a specific month.
+          sortKey: -1781608107026
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: getHourlyResult
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/daily/download"
+        name: Download daily volume.
+        meta:
+          id: req_d44b6c6ad61440bfa5e0fb9827706d00
+          created: 1781607763679
+          modified: 1781608119791
+          isPrivate: false
+          description: Download a CSV file of the daily volume.
+          sortKey: -1781608107051
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: getHourlyResult
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/weekly"
+        name: Get daily volume for week.
+        meta:
+          id: req_61ebb3181b764af8bef9f717cbdd66a0
+          created: 1781607763681
+          modified: 1781608113287
+          isPrivate: false
+          description: Get daily volume, for a specific week (number).
+          sortKey: -1781608107201
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/weekly/download"
+        name: Download daily volume for week
+        meta:
+          id: req_cc179d6c8ef940698a67be307eee6c38
+          created: 1781607763681
+          modified: 1781608116007
+          isPrivate: false
+          description: Download a CSV file of the daily volume for week.
+          sortKey: -1781608107151
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/monthly"
+        name: Get monthly volume
+        meta:
+          id: req_87029d16d17841868f3682ebe1e57ebe
+          created: 1781607763682
+          modified: 1781608109489
+          isPrivate: false
+          description: Get monthly volume, for a specific year.
+          sortKey: -1781608107101
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/:deliveryPointId/monthly/download"
+        name: Download monthly volume.
+        meta:
+          id: req_067fe478dd3748f59e5f906c306973de
+          created: 1781607763684
+          modified: 1781608107034
+          isPrivate: false
+          description: Download a CSV file of the monthly volume.
+          sortKey: -1781608107001
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Volume Delivery Point Group
+    meta:
+      id: fld_2f10e9a430f6453fa22ff9380083385c
+      created: 1781607996113
+      modified: 1781608099259
+      sortKey: -1781608005551
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/hourly/download"
+        name: Download hourly aggregated group volume.
+        meta:
+          id: req_7f2c4d229ba94c37b4079eb66253160b
+          created: 1781607763685
+          modified: 1781608060409
+          isPrivate: false
+          description: Download a CSV file of hourly aggregated group volume.
+          sortKey: -1781608034349.875
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/hourly"
+        name: Get aggregated hourly volume for a group of delivery points
+        meta:
+          id: req_daeeb8ac40b7421fb13e80cc72e28db8
+          created: 1781607763685
+          modified: 1781608056839
+          isPrivate: false
+          description: Get aggregated hourly volume for a group of delivery points, for a
+            specific day.
+          sortKey: -1781608034346.75
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: day
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/daily"
+        name: Get aggregated daily volume for a group of delivery points
+        meta:
+          id: req_8a962050d2084af89d73c5674db7cdfa
+          created: 1781607763686
+          modified: 1781608053895
+          isPrivate: false
+          description: Get aggregated daily volume for a group of delivery points, for a
+            specific month.
+          sortKey: -1781608034340.5
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/daily/download"
+        name: Download aggregated daily group volume.
+        meta:
+          id: req_227b81be01004c1aa5c5dc0033985256
+          created: 1781607763687
+          modified: 1781608050853
+          isPrivate: false
+          description: Download a CSV file of aggregated daily group volume.
+          sortKey: -1781608034353
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: month
+            value: "0"
+            disabled: false
+          - name: getHourlyResult
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/weekly/download"
+        name: Download aggregated group volume for week.
+        meta:
+          id: req_853e76bf92ea4509993c3fb3fc7524e7
+          created: 1781607763688
+          modified: 1781608045049
+          isPrivate: false
+          description: Download a CSV file of aggregated group volume for week.
+          sortKey: -1781608034303
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/weekly"
+        name: Get aggregated daily volume for week and a group of delivery points
+        meta:
+          id: req_d595b62e1fcb41dda11990103b34641d
+          created: 1781607763688
+          modified: 1781608042134
+          isPrivate: false
+          description: Get aggregated daily volume for a group of delivery points, for a
+            specific week (number).
+          sortKey: -1781608034328
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: week
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/monthly"
+        name: Get aggregated monthly volume for a group of delivery points
+        meta:
+          id: req_d7ccbc7e39e846f19460c3d64197ba5e
+          created: 1781607763689
+          modified: 1781608038604
+          isPrivate: false
+          description: Get aggregated monthly volume for a group of delivery points, for a
+            specific year.
+          sortKey: -1781608034378
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+          - name: splitResultsByDeliveryPoint
+            value: "true"
+            disabled: true
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/v1/volume/deliverypointgroup/monthly/download"
+        name: Download aggregated monthly group volume.
+        meta:
+          id: req_7967a5f098eb47bdbeec757381c3e3a3
+          created: 1781607763690
+          modified: 1781608034315
+          isPrivate: false
+          description: Download a CSV file of aggregated monthly group volume.
+          sortKey: -1781608034278
+        method: GET
+        parameters:
+          - name: year
+            value: "0"
+            disabled: false
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+          - name: x-deliveryPointIds
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Volume Probe
+    meta:
+      id: fld_b1e71dc234ab430eb0e8360c5eaebb96
+      created: 1781608002965
+      modified: 1781608155170
+      sortKey: -1781608002965
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/v1/volume/probe/:deliveryPointId/years"
+        name: Probe for years with available volume
+        meta:
+          id: req_f20833e23b0944b68493c43ef174bf47
+          created: 1781607763690
+          modified: 1781608028283
+          isPrivate: false
+          description: Probe for years with available volume for a delivery point (max 3
+            years back in time). The current year is not included.
+          sortKey: -1781608028250
+        method: GET
+        headers:
+          - name: x-momentId
+            value: "0"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: V1
+    meta:
+      id: fld_0b12a75c39bf48bdb433b616cc80a36a
+      created: 1781608008137
+      modified: 1781608828406
+      sortKey: -1781608008137
+      description: ""
+    children:
+      - name: User
+        meta:
+          id: fld_e2d51f78c18145a799d2269dcc4b0b0e
+          created: 1781607886159
+          modified: 1781608393082
+          sortKey: -1781608174403
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/v1/user"
+            name: Get user information
+            meta:
+              id: req_4d88a25bafbc407ebab969c19bf25e41
+              created: 1781607763677
+              modified: 1781608431081
+              isPrivate: false
+              description: Get info about the currently authenticated user and its customer
+                relationships.
+              sortKey: -1781608147181
+            method: GET
+            headers:
+              - name: x-momentId
+                value: "{{ _.MomentId }}"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+        headers:
+          - name: x-momentId
+            value: "{{ _.MomentId }}"
+            description: ""
+            disabled: false
+      - name: Cost
+        meta:
+          id: fld_2509fd5f6952475caf3badc1af76a8ef
+          created: 1781607959809
+          modified: 1781610157969
+          sortKey: -1781608174603
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/v1/cost/summary/{{ _.DeliveryPointId }}/monthly"
+            name: Get monthly cost summary
+            meta:
+              id: req_3b9d2f28cc214e03aeca6111baae582e
+              created: 1781607763663
+              modified: 1781610309021
+              isPrivate: false
+              description: Get monthly cost summary, for a specific year.
+              sortKey: -1781610053173
+            method: GET
+            parameters:
+              - name: year
+                value: "{{ _.Default_Year }}"
+                disabled: false
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/cost/summary/{{ _.DeliveryPointId }}/monthly/download"
+            name: Download cost summary
+            meta:
+              id: req_bbceedbff7814820a18fb764d3719d3f
+              created: 1781607763664
+              modified: 1781610337372
+              isPrivate: false
+              description: Download a CSV of the cost summary.
+              sortKey: -1781610053073
+            method: GET
+            parameters:
+              - name: year
+                value: "{{ _.Default_Year }}"
+                disabled: false
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/cost/comparison/{{ _.DeliveryPointId }}/monthly"
+            name: Get monthly cost comparison
+            meta:
+              id: req_737592c005a146bb86627570b5ad6a21
+              created: 1781607763665
+              modified: 1781610300831
+              isPrivate: false
+              description: Get monthly cost comparison, for a specific year.
+              sortKey: -1781610052973
+            method: GET
+            parameters:
+              - name: year
+                value: "{{ _.Default_Year }}"
+                disabled: false
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/cost/comparison/{{ _.DeliveryPointId
+              }}/monthly/download"
+            name: Download cost comparison
+            meta:
+              id: req_73800cf6ad5a47589e127126ff97fe9d
+              created: 1781607763665
+              modified: 1781610368405
+              isPrivate: false
+              description: Download a CSV of the cost comparison.
+              sortKey: -1781610052873
+            method: GET
+            parameters:
+              - name: year
+                value: "{{ _.Default_Year }}"
+                disabled: false
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Customer
+        meta:
+          id: fld_d31890be325b422c8b6a83a89137de60
+          created: 1781607965614
+          modified: 1781609649770
+          sortKey: -1781608174503
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/v1/customer"
+            name: Get customer information
+            meta:
+              id: req_dbcad13924a94eac93706d0648a33234
+              created: 1781607763666
+              modified: 1781608899291
+              isPrivate: false
+              description: "Get customer information, including delivery points.\r
+
+                \r
+
+                This endpoint is deprecated and will be removed in a future
+                version. Please use the /v2/customer endpoint instead."
+              sortKey: -1781608722005
+            method: GET
+            headers:
+              - name: x-momentId
+                value: "{{ _.MomentId }}"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/customer/cache/remove"
+            name: Remove customer cache
+            meta:
+              id: req_5aef6b5a3d94454f8e55b2dc584a344b
+              created: 1781607763668
+              modified: 1781610041467
+              isPrivate: false
+              description: "Remove cache entries associated with the customer.\r
+
+                \r
+
+                This endpoint is deprecated and will be removed in a future
+                version. Please use the /v2/customer/cache/remove endpoint
+                instead."
+              sortKey: -1781608721917.5
+            method: DELETE
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/customer/deliveryPoints/:deliveryPointId/invoiceLabel"
+            name: Set invoice label
+            meta:
+              id: req_e9ea9d3f012d4a0c9de4d6ededcf876d
+              created: 1781607763669
+              modified: 1781610009240
+              isPrivate: false
+              description: "Set invoice label for delivery point.\r
+
+                \r
+
+                This endpoint is deprecated and will be removed in a future
+                version. Please use the
+                /v2/deliveryPoints/{deliveryPointId}/invoiceLabel endpoint
+                instead."
+              sortKey: -1781608721930
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "invoiceLabel": "string"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-momentId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/customer/deliveryPoints/{{ _.DeliveryPointId
+              }}/estimatedAnnualConsumption"
+            name: Get estimated annual consumption
+            meta:
+              id: req_a2dd529feac54a8092d44fec5d4490cf
+              created: 1781607763670
+              modified: 1781609979749
+              isPrivate: false
+              description: "Get estimated annual consumption for delivery point.\r
+
+                \r
+
+                This endpoint is deprecated and will be removed in a future
+                version. Please use the
+                /v2/deliveryPoints/{deliveryPointId}/estimatedAnnualConsumption
+                endpoint instead."
+              sortKey: -1781608722105
+            method: GET
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/customer/financialTrades"
+            name: Get financial hedging trades
+            meta:
+              id: req_bdce80bc697a4ed296b5953c3b56e786
+              created: 1781607763670
+              modified: 1781609880266
+              isPrivate: false
+              description: "Get financial hedging trades for a customer.\r
+
+                \r
+
+                This endpoint is deprecated and will be removed in a future
+                version. Please use the /v2/customer/financialTrades endpoint
+                instead."
+              sortKey: -1781608721955
+            method: GET
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/v1/invoice/list"
+            name: Get customer invoices
+            meta:
+              id: req_5c3408f69b43470982b6c5cca90ef624
+              created: 1781607763671
+              modified: 1781608950040
+              isPrivate: false
+              description: Get customer invoices for a specific year.
+              sortKey: -1781608721905
+            method: GET
+            parameters:
+              - name: year
+                value: "2026"
+                disabled: false
+              - name: accountId
+                value: "0"
+                disabled: true
+            headers:
+              - name: x-momentId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+    authentication:
+      type: oauth2
+      grantType: authorization_code
+      accessTokenUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/token
+      authorizationUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/authorize
+      clientId: 4e750747-fc62-4954-b16f-1ea328bace7d
+      clientSecret: n_88Q~xsIgAyrLzWtXhLmoWHs0lhK-g68WcdbaRz
+      scope: api://les-myb2b-test/Customer.Admin openid
+      redirectUrl: http://localhost:3000/api/auth/callback/azure-ad
+      usePkce: true
+    headers:
+      - name: x-momentId
+        value: "{{ _.MomentId }}"
+        description: ""
+        disabled: false
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c68bfaa12e5c9385a0fb06c736e6827f6ef02f04
+    created: 1781607763880
+    modified: 1781608293382
+  cookies:
+    - id: 7bf5df2f-0ef2-4fda-89e9-27f7d74d7258
+      key: fpc
+      value: AjreHbQUzttBrpyfOQrZDfnoQOfHAQAAAGMmw-EOAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: ab08bfa4-4231-48fd-b2b6-7e08eda744e9
+      key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 9e037414-ee8b-4fe8-b0aa-6d7e3ba29792
+      key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base environment
+  meta:
+    id: env_9d91cc6ac148496baf95baeb15264a05
+    created: 1781607763647
+    modified: 1781607763647
+    isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: localhost
+      meta:
+        id: env_6177b84fdcb146be8f1eff714d454059
+        created: 1781607763648
+        modified: 1781607789076
+        isPrivate: false
+        sortKey: 1781607763648
+      data:
+        scheme: https
+        base_path: ""
+        host: localhost:7159
+    - name: Local - Lyse Energi
+      meta:
+        id: env_21e119f246a84f6fbd8e4350934759cc
+        created: 1781608362677
+        modified: 1781610293117
+        isPrivate: false
+        sortKey: 1781607763698
+      data:
+        scheme: https
+        base_path: ""
+        host: localhost:7159
+        MomentId: "110170868"
+        DeliveryPointId: "707057500072171876"
+        Default_Year: "2026"
+spec:
+  contents:
+    openapi: 3.0.4
+    info:
+      title: Lyse.Moment.Api
+      version: v1
+    paths:
+      /v1/consumption/{deliveryPointId}/hourly:
+        get:
+          tags:
+            - Consumption
+          summary: Get hourly consumption and cost
+          description: Get hourly consumption and cost, for a specific day.
+          operationId: GetHourly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionResultV1"
+      /v1/consumption/{deliveryPointId}/hourly/download:
+        get:
+          tags:
+            - Consumption
+          summary: Download hourly consumption
+          description: Download a CSV file of the hourly consumption.
+          operationId: DownloadHourly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/consumption/{deliveryPointId}/daily:
+        get:
+          tags:
+            - Consumption
+          summary: Get daily consumption and cost
+          description: Get daily consumption and cost, for a specific month.
+          operationId: GetDaily
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionResultV1"
+      /v1/consumption/{deliveryPointId}/daily/download:
+        get:
+          tags:
+            - Consumption
+          summary: Download daily consumption
+          description: Download a CSV file of the daily consumption.
+          operationId: DownloadDaily
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: getHourlyResult
+              in: query
+              description: When set to [true], the resulting volume is presented in hourly
+                resolution (hour-by-hour).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/consumption/{deliveryPointId}/weekly:
+        get:
+          tags:
+            - Consumption
+          summary: Get daily consumption and cost for week
+          description: Get daily consumption and cost, for a specific week number.
+          operationId: GetWeekly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionResultV1"
+      /v1/consumption/{deliveryPointId}/weekly/download:
+        get:
+          tags:
+            - Consumption
+          summary: Download daily consumption for week
+          description: Download a CSV file of the daily consumption, for a specific week
+            number.
+          operationId: DownloadWeekly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/consumption/{deliveryPointId}/monthly:
+        get:
+          tags:
+            - Consumption
+          summary: Get monthly consumption and cost
+          description: Get monthly consumption and cost, for a specific year.
+          operationId: GetMonthly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionResultV1"
+      /v1/consumption/{deliveryPointId}/monthly/download:
+        get:
+          tags:
+            - Consumption
+          summary: Download monthly consumption
+          description: Download a CSV file of the monthly consumption.
+          operationId: DownloadMonthly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/consumption/deliverypointgroup/hourly:
+        get:
+          tags:
+            - Consumption Delivery Point Group
+          summary: Get aggregated hourly consumption and cost for a group of delivery
+            points
+          description: Get aggregated hourly consumption and cost for a group of delivery
+            points, for a specific day.
+          operationId: GetHourlyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate
+                consumption for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionGroupResultV1"
+      /v1/consumption/deliverypointgroup/daily:
+        get:
+          tags:
+            - Consumption Delivery Point Group
+          summary: Get aggregated daily consumption and cost for a group of delivery
+            points
+          description: Get aggregated daily consumption and cost for a group of delivery
+            points, for a specific month.
+          operationId: GetDailyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate
+                consumption for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionGroupResultV1"
+      /v1/consumption/deliverypointgroup/weekly:
+        get:
+          tags:
+            - Consumption Delivery Point Group
+          summary: Get aggregated daily consumption and cost for week and a group of
+            delivery points
+          description: Get aggregated daily consumption and cost for a group of delivery
+            points, for a specific week number.
+          operationId: GetWeeklyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate
+                consumption for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionGroupResultV1"
+      /v1/consumption/deliverypointgroup/monthly:
+        get:
+          tags:
+            - Consumption Delivery Point Group
+          summary: Get aggregated monthly consumption and cost for year and a group of
+            delivery points
+          description: Get aggregated monthly consumption and cost for a group of delivery
+            points, for a specific year.
+          operationId: GetMonthlyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate
+                consumption for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ConsumptionGroupResultV1"
+      /v1/cost/summary/{deliveryPointId}/monthly:
+        get:
+          tags:
+            - Cost
+          summary: Get monthly cost summary
+          description: Get monthly cost summary, for a specific year.
+          operationId: GetMonthlyCostSummary
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CostSummaryResultV1"
+      /v1/cost/summary/{deliveryPointId}/monthly/download:
+        get:
+          tags:
+            - Cost
+          summary: Download cost summary
+          description: Download a CSV of the cost summary.
+          operationId: DownloadMonthlyCostSummary
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/cost/comparison/{deliveryPointId}/monthly:
+        get:
+          tags:
+            - Cost
+          summary: Get monthly cost comparison
+          description: Get monthly cost comparison, for a specific year.
+          operationId: GetCostComparison
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CostComparisonResultV1"
+      /v1/cost/comparison/{deliveryPointId}/monthly/download:
+        get:
+          tags:
+            - Cost
+          summary: Download cost comparison
+          description: Download a CSV of the cost comparison.
+          operationId: DownloadMonthlyCostComparison
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/customer:
+        get:
+          tags:
+            - Customer
+          summary: Get customer information
+          description: "Get customer information, including delivery points.\r
+
+            \r
+
+            This endpoint is deprecated and will be removed in a future version.
+            Please use the /v2/customer endpoint instead."
+          operationId: Get
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CustomerResultV1"
+          deprecated: true
+      /v1/customer/cache/remove:
+        delete:
+          tags:
+            - Customer
+          summary: Remove customer cache
+          description: "Remove cache entries associated with the customer.\r
+
+            \r
+
+            This endpoint is deprecated and will be removed in a future version.
+            Please use the /v2/customer/cache/remove endpoint instead."
+          operationId: RemoveCustomerCache
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+          deprecated: true
+      /v1/customer/deliveryPoints/{deliveryPointId}/invoiceLabel:
+        put:
+          tags:
+            - Customer
+          summary: Set invoice label
+          description: "Set invoice label for delivery point.\r
+
+            \r
+
+            This endpoint is deprecated and will be removed in a future version.
+            Please use the /v2/deliveryPoints/{deliveryPointId}/invoiceLabel
+            endpoint instead."
+          operationId: SetInvoiceLabel
+          parameters:
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/SetInvoiceLabelPayloadV1"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/SetInvoiceLabelPayloadV1"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/SetInvoiceLabelPayloadV1"
+            required: true
+          responses:
+            "200":
+              description: OK
+          deprecated: true
+      /v1/customer/deliveryPoints/{deliveryPointId}/estimatedAnnualConsumption:
+        get:
+          tags:
+            - Customer
+          summary: Get estimated annual consumption
+          description: "Get estimated annual consumption for delivery point.\r
+
+            \r
+
+            This endpoint is deprecated and will be removed in a future version.
+            Please use the
+            /v2/deliveryPoints/{deliveryPointId}/estimatedAnnualConsumption
+            endpoint instead."
+          operationId: GetEstimatedAnnualConsumption
+          parameters:
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/EstimatedAnnualConsumptionResultV1"
+          deprecated: true
+      /v1/customer/financialTrades:
+        get:
+          tags:
+            - Customer
+          summary: Get financial hedging trades
+          description: "Get financial hedging trades for a customer.\r
+
+            \r
+
+            This endpoint is deprecated and will be removed in a future version.
+            Please use the /v2/customer/financialTrades endpoint instead."
+          operationId: GetFinancialTrades
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CustomerFinancialTradesV1"
+          deprecated: true
+      /v1/invoice/list:
+        get:
+          tags:
+            - Invoice
+          summary: Get customer invoices
+          description: Get customer invoices for a specific year.
+          operationId: GetList
+          parameters:
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: accountId
+              in: query
+              description: ""
+              schema:
+                type: integer
+                format: int64
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/InvoiceResultV1"
+      /v1/invoice/documentlink:
+        get:
+          tags:
+            - Invoice
+          summary: Get a link to an invoice file
+          description: Get a link to an invoice file.
+          operationId: GetDocumentLink
+          parameters:
+            - name: accountId
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: ocrNumber
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/DocumentLinkResultV1"
+      /v1/volume/peaks/{deliveryPointId}/hourly:
+        get:
+          tags:
+            - Peak Volume
+          summary: Get hourly volumes and peak details
+          description: Get hourly volumes for a specific day, including its peak volume
+            and monthly peak volume details.
+          operationId: GetHourlyPeaks
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: monthlyPeakVolumeCount
+              in: query
+              description: ""
+              schema:
+                type: integer
+                format: int32
+                default: 3
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/PeakVolumeResultV1"
+      /v1/volume/peaks/{deliveryPointId}/daily:
+        get:
+          tags:
+            - Peak Volume
+          summary: Get daily peak volume and peak details.
+          description: Get daily peak volume for each day in a specific month, including
+            monthly peak volume details.
+          operationId: GetDailyPeaks
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: monthlyPeakVolumeCount
+              in: query
+              description: ""
+              schema:
+                type: integer
+                format: int32
+                default: 3
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/PeakVolumeResultV1"
+      /v1/volume/peaks/{deliveryPointId}/weekly:
+        get:
+          tags:
+            - Peak Volume
+          summary: Get daily peak volume for week and peak details
+          description: Get daily peak volume for each day in a specific week (number),
+            including monthly peak volume details.
+          operationId: GetWeeklyPeaks
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: monthlyPeakVolumeCount
+              in: query
+              description: ""
+              schema:
+                type: integer
+                format: int32
+                default: 3
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/PeakVolumeResultV1"
+      /v1/product/order/add:
+        post:
+          tags:
+            - Product
+          summary: Submit a product order
+          description: Submit a product order. Orders will be created for each of the
+            customers active delivery points.
+          operationId: AddProductOrder
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: "Supported values: MyB2B"
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/AddProductOrderV1"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/AddProductOrderV1"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/AddProductOrderV1"
+            required: true
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ProductOrderResultV1"
+      /v1/product/order/{orderId}/status:
+        get:
+          tags:
+            - Product
+          summary: Get order processing status
+          description: Get the current processing status for an order.
+          operationId: GetOrderStatus
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: orderId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ProductOrderDataV1"
+      /v1/user:
+        get:
+          tags:
+            - User
+          summary: Get user information
+          description: Get info about the currently authenticated user and its customer
+            relationships.
+          operationId: Get
+          parameters:
+            - name: x-momentId
+              in: header
+              description: Should only be used with EntraID authentication, in which case it
+                is mandatory.
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/UserResultV1"
+      /v1/volume/{deliveryPointId}/hourly:
+        get:
+          tags:
+            - Volume
+          summary: Get hourly volume
+          description: Get hourly volume, for a specific day.
+          operationId: GetHourly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeResultV1"
+      /v1/volume/{deliveryPointId}/hourly/download:
+        get:
+          tags:
+            - Volume
+          summary: Download hourly volume.
+          description: Download a CSV file of the hourly volume.
+          operationId: DownloadHourly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/{deliveryPointId}/daily:
+        get:
+          tags:
+            - Volume
+          summary: Get daily volume
+          description: Get daily volume, for a specific month.
+          operationId: GetDaily
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: getHourlyResult
+              in: query
+              description: When set to [true], the resulting volume is presented in hourly
+                resolution (hour-by-hour).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeResultV1"
+      /v1/volume/{deliveryPointId}/daily/download:
+        get:
+          tags:
+            - Volume
+          summary: Download daily volume.
+          description: Download a CSV file of the daily volume.
+          operationId: DownloadDaily
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: getHourlyResult
+              in: query
+              description: When set to [true], the resulting volume is presented in hourly
+                resolution (hour-by-hour).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/{deliveryPointId}/weekly:
+        get:
+          tags:
+            - Volume
+          summary: Get daily volume for week.
+          description: Get daily volume, for a specific week (number).
+          operationId: GetWeekly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeResultV1"
+      /v1/volume/{deliveryPointId}/weekly/download:
+        get:
+          tags:
+            - Volume
+          summary: Download daily volume for week
+          description: Download a CSV file of the daily volume for week.
+          operationId: DownloadWeekly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/{deliveryPointId}/monthly:
+        get:
+          tags:
+            - Volume
+          summary: Get monthly volume
+          description: Get monthly volume, for a specific year.
+          operationId: GetMonthly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeResultV1"
+      /v1/volume/{deliveryPointId}/monthly/download:
+        get:
+          tags:
+            - Volume
+          summary: Download monthly volume.
+          description: Download a CSV file of the monthly volume.
+          operationId: DownloadMonthly
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                text/csv:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/deliverypointgroup/hourly:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Get aggregated hourly volume for a group of delivery points
+          description: Get aggregated hourly volume for a group of delivery points, for a
+            specific day.
+          operationId: GetHourlyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate volume
+                for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeGroupResultV1"
+      /v1/volume/deliverypointgroup/hourly/download:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Download hourly aggregated group volume.
+          description: Download a CSV file of hourly aggregated group volume.
+          operationId: DownloadHourlyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: day
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/deliverypointgroup/daily:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Get aggregated daily volume for a group of delivery points
+          description: Get aggregated daily volume for a group of delivery points, for a
+            specific month.
+          operationId: GetDailyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate volume
+                for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeGroupResultV1"
+      /v1/volume/deliverypointgroup/daily/download:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Download aggregated daily group volume.
+          description: Download a CSV file of aggregated daily group volume.
+          operationId: DownloadDailyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: month
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: getHourlyResult
+              in: query
+              description: When set to [true], the resulting volume is presented in hourly
+                resolution (hour-by-hour).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/deliverypointgroup/weekly:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Get aggregated daily volume for week and a group of delivery points
+          description: Get aggregated daily volume for a group of delivery points, for a
+            specific week (number).
+          operationId: GetWeeklyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate volume
+                for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeGroupResultV1"
+      /v1/volume/deliverypointgroup/weekly/download:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Download aggregated group volume for week.
+          description: Download a CSV file of aggregated group volume for week.
+          operationId: DownloadWeeklyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: week
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/deliverypointgroup/monthly:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Get aggregated monthly volume for a group of delivery points
+          description: Get aggregated monthly volume for a group of delivery points, for a
+            specific year.
+          operationId: GetMonthlyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+            - name: splitResultsByDeliveryPoint
+              in: query
+              description: When set to [true], the result will be split into separate volume
+                for each delivery point (no aggregation).
+              schema:
+                type: boolean
+                default: false
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeGroupResultV1"
+      /v1/volume/deliverypointgroup/monthly/download:
+        get:
+          tags:
+            - Volume Delivery Point Group
+          summary: Download aggregated monthly group volume.
+          description: Download a CSV file of aggregated monthly group volume.
+          operationId: DownloadMonthlyForDeliveryPointGroup
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: x-deliveryPointIds
+              in: header
+              description: Comma-separated string of delivery point ids.
+              required: true
+              schema:
+                type: string
+            - name: year
+              in: query
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int32
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: string
+                    format: binary
+      /v1/volume/probe/{deliveryPointId}/years:
+        get:
+          tags:
+            - Volume Probe
+          summary: Probe for years with available volume
+          description: Probe for years with available volume for a delivery point (max 3
+            years back in time). The current year is not included.
+          operationId: ProbeDeliveryPointVolume
+          parameters:
+            - name: x-momentId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/VolumeProbeResultV1"
+    components:
+      schemas:
+        AddProductOrderV1:
+          required:
+            - productCode
+          type: object
+          properties:
+            productCode:
+              type: string
+              nullable: true
+          additionalProperties: false
+        AgreedVolumeProductV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            priceExVat:
+              type: number
+              format: double
+            yearlyVolume:
+              type: integer
+              format: int64
+          additionalProperties: false
+        AgreedVolumeResultV1:
+          type: object
+          properties:
+            agreedVolumeSum:
+              type: number
+              format: double
+            agreedVolumeExceededSum:
+              type: number
+              format: double
+            agreedVolumeSubceededSum:
+              type: number
+              format: double
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/AgreedVolumeV1"
+              nullable: true
+          additionalProperties: false
+        AgreedVolumeV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            actualVolume:
+              type: number
+              format: double
+            actualCostExVat:
+              type: number
+              format: double
+            agreedVolume:
+              type: number
+              format: double
+            agreedCostExVat:
+              type: number
+              format: double
+            agreedVolumeExceeded:
+              type: number
+              format: double
+            agreedVolumeSubceeded:
+              type: number
+              format: double
+            agreedCostExVatExceeded:
+              type: number
+              format: double
+            agreedCostExVatSubceeded:
+              type: number
+              format: double
+          additionalProperties: false
+        ConsumptionGroupDataV1:
+          type: object
+          properties:
+            deliveryPointIds:
+              type: array
+              items:
+                type: string
+              nullable: true
+            resultFrom:
+              type: string
+              format: date-time
+            resultTo:
+              type: string
+              format: date-time
+            volumeSum:
+              type: number
+              format: double
+            costExVatSum:
+              type: number
+              format: double
+            costIncVatSum:
+              type: number
+              format: double
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/ConsumptionVolumeV1"
+              nullable: true
+          additionalProperties: false
+        ConsumptionGroupResultV1:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: "#/components/schemas/ConsumptionGroupDataV1"
+              nullable: true
+          additionalProperties: false
+        ConsumptionResultV1:
+          required:
+            - deliveryPointId
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            resultFrom:
+              type: string
+              format: date-time
+            resultTo:
+              type: string
+              format: date-time
+            volumeSum:
+              type: number
+              format: double
+            costExVatSum:
+              type: number
+              format: double
+            costIncVatSum:
+              type: number
+              format: double
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/ConsumptionVolumeV1"
+              nullable: true
+            agreedVolumeResult:
+              $ref: "#/components/schemas/AgreedVolumeResultV1"
+            productionVolumeResult:
+              $ref: "#/components/schemas/ProductionVolumeResultV1"
+          additionalProperties: false
+        ConsumptionVolumeV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            volume:
+              type: number
+              format: double
+            price:
+              type: number
+              format: double
+            costExVat:
+              type: number
+              format: double
+            costIncVat:
+              type: number
+              format: double
+          additionalProperties: false
+        CostComparisonResultV1:
+          required:
+            - deliveryPointId
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            resultFrom:
+              type: string
+              format: date-time
+            resultTo:
+              type: string
+              format: date-time
+            priceArea:
+              type: string
+              nullable: true
+            volumeSum:
+              type: number
+              format: double
+            sumActualCost:
+              type: number
+              format: double
+            sumSpotCost:
+              type: number
+              format: double
+            sumComparisonAmount:
+              type: number
+              format: double
+            results:
+              type: array
+              items:
+                $ref: "#/components/schemas/CostComparisonV1"
+              nullable: true
+          additionalProperties: false
+        CostComparisonV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            volume:
+              type: number
+              format: double
+            actualCostAvgPrice:
+              type: number
+              format: double
+            actualCost:
+              type: number
+              format: double
+            spotCostAvgPrice:
+              type: number
+              format: double
+            spotCost:
+              type: number
+              format: double
+            comparisonAmount:
+              type: number
+              format: double
+          additionalProperties: false
+        CostSummaryResultV1:
+          required:
+            - deliveryPointId
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            resultFrom:
+              type: string
+              format: date-time
+            resultTo:
+              type: string
+              format: date-time
+            volumeSum:
+              type: number
+              format: double
+            sumAgreedVolumeCost:
+              type: number
+              format: double
+            sumSpotCost:
+              type: number
+              format: double
+            sumFinancialResultCost:
+              type: number
+              format: double
+            sumTotalCostExclFinancialResult:
+              type: number
+              format: double
+            sumTotalCost:
+              type: number
+              format: double
+            results:
+              type: array
+              items:
+                $ref: "#/components/schemas/CostSummaryV1"
+              nullable: true
+          additionalProperties: false
+        CostSummaryV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            volume:
+              type: number
+              format: double
+            agreedVolumeCost:
+              type: number
+              format: double
+            spotCost:
+              type: number
+              format: double
+            financialResultCost:
+              type: number
+              format: double
+            totalCostExclFiancialResult:
+              type: number
+              format: double
+            totalCost:
+              type: number
+              format: double
+          additionalProperties: false
+        CustomerContactPersonV1:
+          type: object
+          properties:
+            firstname:
+              type: string
+              nullable: true
+            surname:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            cellphone:
+              type: string
+              nullable: true
+            relation:
+              type: string
+              nullable: true
+            role:
+              type: string
+              nullable: true
+          additionalProperties: false
+        CustomerContractV1:
+          type: object
+          properties:
+            contractId:
+              type: integer
+              format: int64
+            accountId:
+              type: integer
+              format: int64
+            deliveryPoints:
+              type: array
+              items:
+                $ref: "#/components/schemas/CustomerDeliveryPointV1"
+              nullable: true
+          additionalProperties: false
+        CustomerDeliveryPointV1:
+          required:
+            - deliveryPointId
+            - deliveryPointType
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            deliveryPointId:
+              type: string
+              nullable: true
+            meterId:
+              type: string
+              nullable: true
+            address:
+              type: string
+              nullable: true
+            zip:
+              type: string
+              nullable: true
+            city:
+              type: string
+              nullable: true
+            deliveryPointType:
+              type: string
+              nullable: true
+            invoiceLabel:
+              type: string
+              nullable: true
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+            priceArea:
+              type: string
+              nullable: true
+            hasMyB2BProduct:
+              type: boolean
+            hasFinancialHedgingProduct:
+              type: boolean
+            products:
+              type: array
+              items:
+                $ref: "#/components/schemas/CustomerProductV1"
+              nullable: true
+          additionalProperties: false
+        CustomerFinancialTradesV1:
+          type: object
+          properties:
+            trades:
+              type: array
+              items:
+                $ref: "#/components/schemas/FinancialTradeV1"
+              nullable: true
+          additionalProperties: false
+        CustomerProductV1:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            productCategory:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+              nullable: true
+            isActive:
+              type: boolean
+            fallbackFromProduct:
+              type: integer
+              format: int64
+              nullable: true
+            agreedVolume:
+              $ref: "#/components/schemas/AgreedVolumeProductV1"
+          additionalProperties: false
+        CustomerResultV1:
+          required:
+            - customerId
+          type: object
+          properties:
+            customerId:
+              type: string
+              nullable: true
+            externalId:
+              type: string
+              nullable: true
+            firstname:
+              type: string
+              nullable: true
+            surname:
+              type: string
+              nullable: true
+            companyName:
+              type: string
+              nullable: true
+            orgNo:
+              type: string
+              nullable: true
+            segmentCode:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            phone:
+              type: string
+              nullable: true
+            cellphone:
+              type: string
+              nullable: true
+            postalAddress:
+              type: string
+              nullable: true
+            invoiceAddress:
+              type: string
+              nullable: true
+            isMyB2BCustomer:
+              type: boolean
+            isFinancialHedgingCustomer:
+              type: boolean
+            contactPerson:
+              $ref: "#/components/schemas/CustomerContactPersonV1"
+            contracts:
+              type: array
+              items:
+                $ref: "#/components/schemas/CustomerContractV1"
+              nullable: true
+          additionalProperties: false
+        DailyPeakVolumeV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            volume:
+              type: number
+              format: double
+            isMonthlyPeak:
+              type: boolean
+          additionalProperties: false
+        DocumentLinkResultV1:
+          type: object
+          properties:
+            link:
+              type: string
+              nullable: true
+          additionalProperties: false
+        EstimatedAnnualConsumptionResultV1:
+          required:
+            - deliveryPointId
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            estimatedAnnualConsumption:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties: false
+        FinancialTradeV1:
+          required:
+            - fromDate
+            - id
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            fromDate:
+              type: string
+              nullable: true
+            toDate:
+              type: string
+              nullable: true
+            quantity:
+              type: number
+              format: double
+            quantityUnit:
+              type: string
+              nullable: true
+            price:
+              type: number
+              format: double
+            priceUnit:
+              type: string
+              nullable: true
+            fee:
+              type: number
+              format: double
+            feeUnit:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+          additionalProperties: false
+        InvoiceResultV1:
+          type: object
+          properties:
+            year:
+              type: integer
+              format: int32
+            invoices:
+              type: array
+              items:
+                $ref: "#/components/schemas/InvoiceV1"
+              nullable: true
+          additionalProperties: false
+        InvoiceV1:
+          type: object
+          properties:
+            accountId:
+              type: integer
+              format: int64
+            sequenceNumber:
+              type: integer
+              format: int64
+            invoiceNumber:
+              type: string
+              nullable: true
+            invoiceDate:
+              type: string
+              format: date-time
+            dueDate:
+              type: string
+              format: date-time
+            amount:
+              type: number
+              format: double
+            status:
+              type: string
+              nullable: true
+            ocrNumber:
+              type: string
+              nullable: true
+            deliveryPoints:
+              type: array
+              items:
+                $ref: "#/components/schemas/CustomerDeliveryPointV1"
+              nullable: true
+          additionalProperties: false
+        MonthlyPeakVolumeV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            volumeCount:
+              type: integer
+              format: int32
+            averageVolume:
+              type: number
+              format: double
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/VolumeV1"
+              nullable: true
+          additionalProperties: false
+        PeakVolumeResultV1:
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            resultFrom:
+              type: string
+              format: date-time
+            resultTo:
+              type: string
+              format: date-time
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/VolumeV1"
+              nullable: true
+            dailyPeakVolumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/DailyPeakVolumeV1"
+              nullable: true
+            monthlyPeakVolumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/MonthlyPeakVolumeV1"
+              nullable: true
+          additionalProperties: false
+        ProductOrderDataV1:
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            customerId:
+              type: integer
+              format: int64
+            orderId:
+              type: string
+              nullable: true
+            state:
+              type: string
+              nullable: true
+            errorMessage:
+              type: string
+              nullable: true
+          additionalProperties: false
+        ProductOrderResultV1:
+          type: object
+          properties:
+            orders:
+              type: array
+              items:
+                $ref: "#/components/schemas/ProductOrderDataV1"
+              nullable: true
+          additionalProperties: false
+        ProductionVolumeResultV1:
+          type: object
+          properties:
+            volumeSum:
+              type: number
+              format: double
+            costExVatSum:
+              type: number
+              format: double
+            costIncVatSum:
+              type: number
+              format: double
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/ConsumptionVolumeV1"
+              nullable: true
+          additionalProperties: false
+        SetInvoiceLabelPayloadV1:
+          type: object
+          properties:
+            invoiceLabel:
+              type: string
+              nullable: true
+          additionalProperties: false
+        UserCustomerV1:
+          required:
+            - id
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            externalId:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            orgNo:
+              type: string
+              nullable: true
+            isMyB2BCustomer:
+              type: boolean
+            isFinancialHedgingCustomer:
+              type: boolean
+          additionalProperties: false
+        UserResultV1:
+          type: object
+          properties:
+            name:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            customers:
+              type: array
+              items:
+                $ref: "#/components/schemas/UserCustomerV1"
+              nullable: true
+          additionalProperties: false
+        VolumeGroupDataV1:
+          type: object
+          properties:
+            deliveryPointIds:
+              type: array
+              items:
+                type: string
+              nullable: true
+            resultFrom:
+              type: string
+              format: date-time
+            resultTo:
+              type: string
+              format: date-time
+            volumeSum:
+              type: number
+              format: double
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/VolumeV1"
+              nullable: true
+          additionalProperties: false
+        VolumeGroupResultV1:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: "#/components/schemas/VolumeGroupDataV1"
+              nullable: true
+          additionalProperties: false
+        VolumeProbeResultV1:
+          required:
+            - deliveryPointId
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            years:
+              type: array
+              items:
+                type: integer
+                format: int32
+              nullable: true
+          additionalProperties: false
+        VolumeResultV1:
+          required:
+            - deliveryPointId
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            resultFrom:
+              type: string
+              format: date-time
+            resultTo:
+              type: string
+              format: date-time
+            volumeSum:
+              type: number
+              format: double
+            volumes:
+              type: array
+              items:
+                $ref: "#/components/schemas/VolumeV1"
+              nullable: true
+          additionalProperties: false
+        VolumeV1:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date-time
+            to:
+              type: string
+              format: date-time
+            volume:
+              type: number
+              format: double
+          additionalProperties: false
+      securitySchemes:
+        Bearer:
+          type: http
+          description: Please enter token
+          scheme: Bearer
+          bearerFormat: JWT
+  meta:
+    id: spc_28fefee8ca08443e9311f2ca45a54f52
+    created: 1781607763643
+    modified: 1781610407703

@@ -1,0 +1,1249 @@
+type: spec.insomnia.rest/5.0
+schema_version: "5.1"
+name: Lyse.MyB2B.Storage 1.0
+meta:
+  id: wrk_213c5f353f5643b7b6c98169347e5503
+  created: 1781616021113
+  modified: 1781616021113
+  description: ""
+collection:
+  - name: "- Authorized -"
+    meta:
+      id: fld_8a8df969d3234b2c81cc584d75722061
+      created: 1781616034017
+      modified: 1781616332327
+      sortKey: -1781616034017
+      description: ""
+    children:
+      - name: Order
+        meta:
+          id: fld_cc260de36cf844e8879471a5d89b3e6c
+          created: 1781616043290
+          modified: 1781616113175
+          sortKey: -1781616043290
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/orders"
+            name: Get orders
+            meta:
+              id: req_7729877436984ce39dd96b2b7c4d9845
+              created: 1781616021128
+              modified: 1781616348632
+              isPrivate: false
+              description: Get all of the customers orders.
+              sortKey: -1781616073328
+            method: GET
+            headers:
+              - name: x-customerId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/orders/create/list"
+            name: Create multiple orders
+            meta:
+              id: req_0baf5f9d18c24effa9d99a116e281d1a
+              created: 1781616021129
+              modified: 1781616083048
+              isPrivate: false
+              description: Create a set of new orders.
+              sortKey: -1781616073078
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "orders": [
+                    {
+                      "orderId": "string",
+                      "deliveryPointId": "string",
+                      "state": "string"
+                    }
+                  ]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/orders/create"
+            name: Create single order
+            meta:
+              id: req_62bdd4ebd8e6415098494878bd7e5fc9
+              created: 1781616021129
+              modified: 1781616080720
+              isPrivate: false
+              description: Create a single order.
+              sortKey: -1781616073228
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "orderId": "string",
+                  "deliveryPointId": "string",
+                  "state": "string"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/orders/update"
+            name: Update order state
+            meta:
+              id: req_0fac7c4e4b67465d8e372645a6a0f554
+              created: 1781616021130
+              modified: 1781616078096
+              isPrivate: false
+              description: Update a single order with a new state.
+              sortKey: -1781616073128
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "orderId": "string",
+                  "state": "string"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/orders/update/list"
+            name: Update multiple order states
+            meta:
+              id: req_91e1df2850ad4588b0e015ba38291cd4
+              created: 1781616021131
+              modified: 1781616075671
+              isPrivate: false
+              description: Update a set of orders with a new state.
+              sortKey: -1781616073028
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "orders": [
+                    {
+                      "orderId": "string",
+                      "state": "string"
+                    }
+                  ]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/orders/:orderId/delete"
+            name: Delete order
+            meta:
+              id: req_bc83451ea0d4428aa0470de335b4a458
+              created: 1781616021132
+              modified: 1781616072947
+              isPrivate: false
+              description: Delete an order.
+              sortKey: -1781616072928
+            method: DELETE
+            headers:
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: DeliveryPointGroups
+        meta:
+          id: fld_d5993e4581bf4952928ccdcb63e79a09
+          created: 1781616054151
+          modified: 1781616054151
+          sortKey: -1781616054151
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/deliverypointgroups"
+            name: Get delivery point groups
+            meta:
+              id: req_dc8e2eba69eb4c259b621bd8a24c00db
+              created: 1781616021119
+              modified: 1781616125099
+              isPrivate: false
+              description: Get all of the customers delivery point groups.
+              sortKey: -1781616107942
+            method: GET
+            headers:
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/deliverypointgroups/create"
+            name: Create delivery point group
+            meta:
+              id: req_fc22d8d5305048a7881c813e29316b8e
+              created: 1781616021120
+              modified: 1781616122181
+              isPrivate: false
+              description: Create a new delivery point group.
+              sortKey: -1781616107792
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "string",
+                  "parentId": "string"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/deliverypointgroups/:groupId/update"
+            name: Update delivery point group
+            meta:
+              id: req_e6f3256c3a3f44579bdfa5be4bcec71a
+              created: 1781616021121
+              modified: 1781616120299
+              isPrivate: false
+              description: Update a delivery point group.
+              sortKey: -1781616107842
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "string"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/deliverypointgroups/:groupId/delete"
+            name: Delete delivery point group
+            meta:
+              id: req_19f467ebf9dc4f7890c511a6619adb97
+              created: 1781616021122
+              modified: 1781616118748
+              isPrivate: false
+              description: Delete a delivery point group, and all its children.
+              sortKey: -1781616107692
+            method: DELETE
+            headers:
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/deliverypointgroups/:groupId/deliverypoints/update"
+            name: Update delivery points in a group
+            meta:
+              id: req_89af98dec1f944f6a7d48fe77537fbf5
+              created: 1781616021122
+              modified: 1781616117106
+              isPrivate: false
+              description: Update the delivery points in a group.
+              sortKey: -1781616107742
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "deliveryPointIds": [
+                    "string"
+                  ]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url
+              }}/api/deliverypointgroups/:groupId/deliverypoints/:deliveryPoint\
+              Id/delete"
+            name: Delete delivery point from group
+            meta:
+              id: req_baa89ef045d7428780b4924c11df3f37
+              created: 1781616021123
+              modified: 1781616107657
+              isPrivate: false
+              description: Delete a delivery point from a group.
+              sortKey: -1781616107642
+            method: DELETE
+            headers:
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: DeliveryPoints
+        meta:
+          id: fld_feacefdd28f54ccaaef3ddd5b3fa7a4f
+          created: 1781616066559
+          modified: 1781616066559
+          sortKey: -1781616066559
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/deliverypoints"
+            name: Get delivery points
+            meta:
+              id: req_2adc44f219b7401aa10a10eaf5a51dc2
+              created: 1781616021124
+              modified: 1781616303492
+              isPrivate: false
+              description: Get all of the customers delivery points.
+              sortKey: -1781616092959
+            method: GET
+            headers:
+              - name: x-customerId
+                value: "0"
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/deliverypoints/create"
+            name: Create delivery point
+            meta:
+              id: req_ff4ccea58a184b0cb077637a3db2165c
+              created: 1781616021125
+              modified: 1781616099213
+              isPrivate: false
+              description: Create a new delivery point.
+              sortKey: -1781616092859
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "deliveryPointId": "string",
+                  "name": "string"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/deliverypoints/:deliveryPointId/update"
+            name: Update delivery point
+            meta:
+              id: req_6bc550c654a54d568f4c93b4553935b3
+              created: 1781616021126
+              modified: 1781616096081
+              isPrivate: false
+              description: Update a delivery point.
+              sortKey: -1781616092759
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "string"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/deliverypoints/:deliveryPointId/delete"
+            name: Delete delivery point
+            meta:
+              id: req_79e7657e33a04eb1b3ea88a44516f54e
+              created: 1781616021127
+              modified: 1781616092673
+              isPrivate: false
+              description: Delete a delivery point.
+              sortKey: -1781616092659
+            method: DELETE
+            headers:
+              - name: x-customerId
+                value: "0"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+    authentication:
+      type: oauth2
+      grantType: authorization_code
+      accessTokenUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/token
+      authorizationUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/authorize
+      clientId: 4e750747-fc62-4954-b16f-1ea328bace7d
+      clientSecret: n_88Q~xsIgAyrLzWtXhLmoWHs0lhK-g68WcdbaRz
+      scope: api://les-myb2b-test/Customer.Admin openid
+      usePkce: true
+    headers:
+      - name: x-customerId
+        value: "{{ _.MomentId }}"
+        description: ""
+        disabled: false
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c2797c55a2d9b438ad320e614bb820c489c042a1
+    created: 1781616021316
+    modified: 1781616300833
+  cookies:
+    - id: 9f28712b-e4a0-4f65-94c4-346c06ae8761
+      key: fpc
+      value: Av1AQdJ8SeNJvaroff2dNFDoQOfHAQAAAKtFw-EOAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 378dc740-ee89-43f0-bc36-bf8ae5c26d7d
+      key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: b25815e7-3a92-414d-8aaa-44095ffcb156
+      key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base environment
+  meta:
+    id: env_54efdbac70ea415981313629f0fd9640
+    created: 1781616021116
+    modified: 1781616021116
+    isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: Local - Lyse Energi
+      meta:
+        id: env_1a326569e8ac41da95064807069a8641
+        created: 1781616021118
+        modified: 1781616181709
+        isPrivate: false
+        sortKey: 1781616021118
+      data:
+        scheme: https
+        base_path: ""
+        host: localhost:7256
+        MomentId: "110170868"
+spec:
+  contents:
+    openapi: 3.0.4
+    info:
+      title: Lyse.MyB2B.Storage
+      version: "1.0"
+    paths:
+      /api/deliverypointgroups:
+        get:
+          tags:
+            - DeliveryPointGroups
+          summary: Get delivery point groups
+          description: Get all of the customers delivery point groups.
+          operationId: GetDeliveryPointGroups
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/DeliveryPointGroupsResult"
+      /api/deliverypointgroups/create:
+        post:
+          tags:
+            - DeliveryPointGroups
+          summary: Create delivery point group
+          description: Create a new delivery point group.
+          operationId: CreateDeliveryPointGroup
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/CreateDeliveryPointGroup"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/CreateDeliveryPointGroup"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/CreateDeliveryPointGroup"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/deliverypointgroups/{groupId}/update:
+        put:
+          tags:
+            - DeliveryPointGroups
+          summary: Update delivery point group
+          description: Update a delivery point group.
+          operationId: UpdateDeliveryPointGroup
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: groupId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPointGroup"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPointGroup"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPointGroup"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/deliverypointgroups/{groupId}/delete:
+        delete:
+          tags:
+            - DeliveryPointGroups
+          summary: Delete delivery point group
+          description: Delete a delivery point group, and all its children.
+          operationId: DeleteDeliveryPointGroup
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: groupId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+      /api/deliverypointgroups/{groupId}/deliverypoints/update:
+        put:
+          tags:
+            - DeliveryPointGroups
+          summary: Update delivery points in a group
+          description: Update the delivery points in a group.
+          operationId: UpdateDeliveryPointsInGroup
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: groupId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPointsInGroup"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPointsInGroup"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPointsInGroup"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/deliverypointgroups/{groupId}/deliverypoints/{deliveryPointId}/delete:
+        delete:
+          tags:
+            - DeliveryPointGroups
+          summary: Delete delivery point from group
+          description: Delete a delivery point from a group.
+          operationId: DeleteDeliveryPointFromGroup
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: groupId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+      /api/deliverypoints:
+        get:
+          tags:
+            - DeliveryPoints
+          summary: Get delivery points
+          description: Get all of the customers delivery points.
+          operationId: GetDeliveryPoints
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/DeliveryPointsResult"
+      /api/deliverypoints/create:
+        post:
+          tags:
+            - DeliveryPoints
+          summary: Create delivery point
+          description: Create a new delivery point.
+          operationId: CreateDeliveryPoint
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/CreateDeliveryPoint"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/CreateDeliveryPoint"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/CreateDeliveryPoint"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/deliverypoints/{deliveryPointId}/update:
+        put:
+          tags:
+            - DeliveryPoints
+          summary: Update delivery point
+          description: Update a delivery point.
+          operationId: UpdateDeliveryPoint
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPoint"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPoint"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/UpdateDeliveryPoint"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/deliverypoints/{deliveryPointId}/delete:
+        delete:
+          tags:
+            - DeliveryPoints
+          summary: Delete delivery point
+          description: Delete a delivery point.
+          operationId: DeleteDeliveryPoint
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: deliveryPointId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+      /api/orders:
+        get:
+          tags:
+            - Orders
+          summary: Get orders
+          description: Get all of the customers orders.
+          operationId: GetOrders
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/OrdersResult"
+      /api/orders/create:
+        post:
+          tags:
+            - Orders
+          summary: Create single order
+          description: Create a single order.
+          operationId: CreateOrder
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/CreateOrder"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/CreateOrder"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/CreateOrder"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/orders/create/list:
+        post:
+          tags:
+            - Orders
+          summary: Create multiple orders
+          description: Create a set of new orders.
+          operationId: CreateFromList
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/CreateOrders"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/CreateOrders"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/CreateOrders"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/orders/update:
+        put:
+          tags:
+            - Orders
+          summary: Update order state
+          description: Update a single order with a new state.
+          operationId: UpdateOrder
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateOrder"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateOrder"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/UpdateOrder"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/orders/update/list:
+        put:
+          tags:
+            - Orders
+          summary: Update multiple order states
+          description: Update a set of orders with a new state.
+          operationId: UpdateFromList
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: ""
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateOrders"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/UpdateOrders"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/UpdateOrders"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/orders/{orderId}/delete:
+        delete:
+          tags:
+            - Orders
+          summary: Delete order
+          description: Delete an order.
+          operationId: DeleteOrder
+          parameters:
+            - name: x-customerId
+              in: header
+              description: ""
+              required: true
+              schema:
+                type: integer
+                format: int64
+            - name: orderId
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+    components:
+      schemas:
+        CreateDeliveryPoint:
+          required:
+            - deliveryPointId
+            - name
+          type: object
+          properties:
+            deliveryPointId:
+              type: string
+              nullable: true
+            name:
+              minLength: 1
+              type: string
+          additionalProperties: false
+        CreateDeliveryPointGroup:
+          required:
+            - name
+          type: object
+          properties:
+            name:
+              minLength: 1
+              type: string
+            parentId:
+              type: string
+              nullable: true
+          additionalProperties: false
+        CreateOrder:
+          required:
+            - deliveryPointId
+            - orderId
+            - state
+          type: object
+          properties:
+            orderId:
+              type: string
+              nullable: true
+            deliveryPointId:
+              type: string
+              nullable: true
+            state:
+              type: string
+              nullable: true
+          additionalProperties: false
+        CreateOrders:
+          required:
+            - orders
+          type: object
+          properties:
+            orders:
+              type: array
+              items:
+                $ref: "#/components/schemas/CreateOrder"
+              nullable: true
+          additionalProperties: false
+        DeliveryPoint:
+          required:
+            - id
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+          additionalProperties: false
+        DeliveryPointGroup:
+          required:
+            - id
+            - name
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            deliveryPoints:
+              type: array
+              items:
+                $ref: "#/components/schemas/DeliveryPoint"
+              nullable: true
+            children:
+              type: array
+              items:
+                $ref: "#/components/schemas/DeliveryPointGroup"
+              nullable: true
+          additionalProperties: false
+        DeliveryPointGroupsResult:
+          required:
+            - customerId
+          type: object
+          properties:
+            customerId:
+              type: string
+              nullable: true
+            groups:
+              type: array
+              items:
+                $ref: "#/components/schemas/DeliveryPointGroup"
+              nullable: true
+          additionalProperties: false
+        DeliveryPointsResult:
+          required:
+            - customerId
+          type: object
+          properties:
+            customerId:
+              type: string
+              nullable: true
+            deliveryPoints:
+              type: array
+              items:
+                $ref: "#/components/schemas/DeliveryPoint"
+              nullable: true
+          additionalProperties: false
+        Order:
+          required:
+            - deliveryPointId
+            - id
+            - registeredDate
+            - state
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            registeredDate:
+              type: string
+              format: date-time
+            deliveryPointId:
+              type: string
+              nullable: true
+            state:
+              type: string
+              nullable: true
+          additionalProperties: false
+        OrdersResult:
+          required:
+            - customerId
+          type: object
+          properties:
+            customerId:
+              type: string
+              nullable: true
+            orders:
+              type: array
+              items:
+                $ref: "#/components/schemas/Order"
+              nullable: true
+          additionalProperties: false
+        UpdateDeliveryPoint:
+          required:
+            - name
+          type: object
+          properties:
+            name:
+              minLength: 1
+              type: string
+          additionalProperties: false
+        UpdateDeliveryPointGroup:
+          required:
+            - name
+          type: object
+          properties:
+            name:
+              minLength: 1
+              type: string
+          additionalProperties: false
+        UpdateDeliveryPointsInGroup:
+          required:
+            - deliveryPointIds
+          type: object
+          properties:
+            deliveryPointIds:
+              type: array
+              items:
+                type: string
+              nullable: true
+          additionalProperties: false
+        UpdateOrder:
+          required:
+            - orderId
+            - state
+          type: object
+          properties:
+            orderId:
+              type: string
+              nullable: true
+            state:
+              minLength: 1
+              type: string
+          additionalProperties: false
+        UpdateOrders:
+          required:
+            - orders
+          type: object
+          properties:
+            orders:
+              type: array
+              items:
+                $ref: "#/components/schemas/UpdateOrder"
+              nullable: true
+          additionalProperties: false
+      securitySchemes:
+        Bearer:
+          type: http
+          description: Please enter token
+          scheme: Bearer
+          bearerFormat: JWT
+  meta:
+    id: spc_89d95caa9ca8421a91153c73bac1df22
+    created: 1781616021115
+    modified: 1781616021115

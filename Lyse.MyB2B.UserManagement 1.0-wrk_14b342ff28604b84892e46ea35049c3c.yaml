@@ -1,0 +1,666 @@
+type: spec.insomnia.rest/5.0
+schema_version: "5.1"
+name: Lyse.MyB2B.UserManagement 1.0
+meta:
+  id: wrk_14b342ff28604b84892e46ea35049c3c
+  created: 1781614382098
+  modified: 1781614382098
+  description: ""
+collection:
+  - name: Authorized
+    meta:
+      id: fld_2a9ea2853e1c47af954a4daa0c9b9440
+      created: 1781614408024
+      modified: 1781614536197
+      sortKey: -1781614408024
+      description: ""
+    children:
+      - name: User
+        meta:
+          id: fld_ae82017add16443abba5208bc038a859
+          created: 1781614422199
+          modified: 1781614490586
+          sortKey: -1781614490567
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/user/moment/list"
+            name: Get list of user accounts with access to a specific Moment customer.
+            meta:
+              id: req_2c669a703d8148d490473f9828cbddeb
+              created: 1781614382106
+              modified: 1781614633115
+              isPrivate: false
+              description: ""
+              sortKey: -1781614452693
+            method: GET
+            headers:
+              - name: x-momentId
+                value: "{{ _.MomentId }}"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/user/moment/create"
+            name: Create a new user account with access to a specific Moment customer.
+            meta:
+              id: req_07f31da53dbd4a9d9ec1dc766a1443d4
+              created: 1781614382107
+              modified: 1781614723853
+              isPrivate: false
+              description: "Note: users already existing in ForgeRock will be upserted with
+                access to new customer."
+              sortKey: -1781614452593
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "customerName": "Lyse Energi",
+                  "firstName": "Robbie",
+                  "lastName": "Fowler",
+                  "email": "kjellw@gmail.com",
+                  "mobile": "+4791570383",
+                  "role": "USER"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-momentId
+                value: "{{ _.MomentId }}"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/user/moment/update/mobile"
+            name: Update an existing user account with a new mobile number.
+            meta:
+              id: req_2e968d57621e4add8be0ed453d585ffc
+              created: 1781614382108
+              modified: 1781614828854
+              isPrivate: false
+              description: ""
+              sortKey: -1781614452493
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "customerName": "Lyse Energi",
+                  "firstName": "Robert",
+                  "lastName": "Fowler",
+                  "email": "kjellw@gmail.com",
+                  "mobile": "+4791570484",
+                  "role": "USER",
+                  "previousMobile": "+4791570383"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-momentId
+                value: "{{ _.MomentId }}"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/user/moment/delete"
+            name: Delete a user account (remove claims) with access to a specific Moment
+              customer.
+            meta:
+              id: req_4bfe27c1e65945f9a73258cef3f7f4e6
+              created: 1781614382109
+              modified: 1781614870612
+              isPrivate: false
+              description: "Note: 'delete' in this context means to remove the relevant Moment
+                claim from a user account in ForgeRock."
+              sortKey: -1781614452393
+            method: DELETE
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "customerName": "Lyse Energi",
+                  "email": "kjellw@gmail.com",
+                  "role": "USER"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                disabled: false
+              - name: x-momentId
+                value: "{{ _.MomentId }}"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+    authentication:
+      type: oauth2
+      grantType: authorization_code
+      accessTokenUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/token
+      authorizationUrl: https://login.microsoftonline.com/22ca942f-06c2-4f38-9407-0e447dedbb67/oauth2/v2.0/authorize
+      clientId: 4e750747-fc62-4954-b16f-1ea328bace7d
+      clientSecret: n_88Q~xsIgAyrLzWtXhLmoWHs0lhK-g68WcdbaRz
+      scope: api://les-myb2b-test/Customer.Admin openid
+      usePkce: true
+  - name: Support
+    meta:
+      id: fld_67ddea27256d4784af81e40fe29711f8
+      created: 1781614416596
+      modified: 1781614416596
+      sortKey: -1781614416596
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/api/support/account"
+        name: Get ForgeRock user account details for a specific username. For internal
+          use only, not related to Moment or any other BSS.
+        meta:
+          id: req_63afe7b51edc4cf1b46e2f4cfb784573
+          created: 1781614382104
+          modified: 1781614443778
+          isPrivate: false
+          description: ""
+          sortKey: -1781614438816
+        method: GET
+        parameters:
+          - name: username
+            value: string
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/support/manualsync"
+        name: Synchronizes primary user based on the current contact person in Moment.
+        meta:
+          id: req_cc9ecdb3cff44a52bda9a5d6425c7c2c
+          created: 1781614382105
+          modified: 1781614438736
+          isPrivate: false
+          description: ""
+          sortKey: -1781614438716
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "customerId": "string"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_0dd87b6b2bd69c64a52290f6223878db37d0a43c
+    created: 1781614382291
+    modified: 1781614539056
+  cookies:
+    - id: fab1652f-4406-46b8-bad3-04b5d744250a
+      key: fpc
+      value: AoPYtTNVvvhOoxGQhKC0V_DoQOfHAQAAAMo-w-EOAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: d1d58db5-8412-484e-80df-7ff57ffe7b79
+      key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 58292bbb-66ab-4ca3-948e-b72538653611
+      key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base environment
+  meta:
+    id: env_e02ab16f0fea40909a6fb9b216a2467b
+    created: 1781614382102
+    modified: 1781614382102
+    isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: Localhost
+      meta:
+        id: env_a00aa260866f4310b58035dc59dbc752
+        created: 1781614382103
+        modified: 1781614478158
+        isPrivate: false
+        sortKey: 1781614382103
+      data:
+        scheme: https
+        base_path: ""
+        host: localhost:7159
+    - name: Local - Lyse Energi
+      meta:
+        id: env_c75c35c3a55c4a3db38e2c95756df899
+        created: 1781614596182
+        modified: 1781614607448
+        isPrivate: false
+        sortKey: 1781614382153
+      data:
+        scheme: https
+        base_path: ""
+        host: localhost:7159
+        MomentId: "110170868"
+spec:
+  contents:
+    openapi: 3.0.4
+    info:
+      title: Lyse.MyB2B.UserManagement
+      version: "1.0"
+    paths:
+      /api/support/account:
+        get:
+          tags:
+            - Support
+          summary: Get ForgeRock user account details for a specific username. For
+            internal use only, not related to Moment or any other BSS.
+          operationId: GetByUsername
+          parameters:
+            - name: username
+              in: query
+              description: ForgeRock username (e-mail).
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/ForgeRockAccount"
+      /api/support/manualsync:
+        post:
+          tags:
+            - Support
+          summary: Synchronizes primary user based on the current contact person in
+            Moment.
+          operationId: SynchronizePrimaryUser
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/SynchronizePrimaryUserCommand"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/SynchronizePrimaryUserCommand"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/SynchronizePrimaryUserCommand"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/user/moment/list:
+        get:
+          tags:
+            - User
+          summary: Get list of user accounts with access to a specific Moment customer.
+          operationId: GetList
+          parameters:
+            - name: x-momentId
+              in: header
+              description: Moment customer id.
+              required: true
+              schema:
+                type: integer
+                format: int64
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/UserAccountModel"
+      /api/user/moment/create:
+        post:
+          tags:
+            - User
+          summary: Create a new user account with access to a specific Moment customer.
+          description: "Note: users already existing in ForgeRock will be upserted with
+            access to new customer."
+          operationId: Create
+          parameters:
+            - name: x-momentId
+              in: header
+              description: Moment customer id.
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: User account details.
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/UpsertUserPayload"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/UpsertUserPayload"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/UpsertUserPayload"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/user/moment/update/mobile:
+        put:
+          tags:
+            - User
+          summary: Update an existing user account with a new mobile number.
+          operationId: UpdateMobile
+          parameters:
+            - name: x-momentId
+              in: header
+              description: Moment customer id.
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: User account details, including previous and new mobile number.
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/UpsertUserWithMobileChangePayload"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/UpsertUserWithMobileChangePayload"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/UpsertUserWithMobileChangePayload"
+            required: true
+          responses:
+            "200":
+              description: OK
+      /api/user/moment/delete:
+        delete:
+          tags:
+            - User
+          summary: Delete a user account (remove claims) with access to a specific Moment
+            customer.
+          description: "Note: 'delete' in this context means to remove the relevant Moment
+            claim from a user account in ForgeRock."
+          operationId: Delete
+          parameters:
+            - name: x-momentId
+              in: header
+              description: Moment customer id.
+              required: true
+              schema:
+                type: integer
+                format: int64
+          requestBody:
+            description: Details for the user account to remove.
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/DeleteUserPayload"
+              text/json:
+                schema:
+                  $ref: "#/components/schemas/DeleteUserPayload"
+              application/*+json:
+                schema:
+                  $ref: "#/components/schemas/DeleteUserPayload"
+            required: true
+          responses:
+            "200":
+              description: OK
+    components:
+      schemas:
+        DeleteUserPayload:
+          required:
+            - customerName
+            - email
+            - role
+          type: object
+          properties:
+            customerName:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            role:
+              type: string
+              nullable: true
+          additionalProperties: false
+        ForgeRockAccount:
+          required:
+            - email
+            - firstName
+            - id
+            - lastName
+            - mobile
+            - userName
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            userName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            mobile:
+              type: string
+              nullable: true
+            lastUpdated:
+              type: string
+              format: date-time
+              nullable: true
+            created:
+              type: string
+              format: date-time
+              nullable: true
+            type:
+              type: string
+              nullable: true
+            accountStatus:
+              type: string
+              nullable: true
+            systems:
+              type: array
+              items:
+                $ref: "#/components/schemas/ForgeRockAccountSystem"
+              nullable: true
+          additionalProperties: false
+        ForgeRockAccountSystem:
+          required:
+            - system
+          type: object
+          properties:
+            system:
+              type: string
+              nullable: true
+            claims:
+              type: array
+              items:
+                $ref: "#/components/schemas/ForgeRockClaim"
+              nullable: true
+          additionalProperties: false
+        ForgeRockClaim:
+          required:
+            - crmUserId
+            - customerRelationship
+            - role
+            - tenantId
+          type: object
+          properties:
+            tenantId:
+              type: string
+              nullable: true
+            role:
+              type: string
+              nullable: true
+            crmUserId:
+              type: string
+              nullable: true
+            customerRelationship:
+              type: string
+              nullable: true
+          additionalProperties: false
+        SynchronizePrimaryUserCommand:
+          type: object
+          properties:
+            customerId:
+              type: string
+              nullable: true
+          additionalProperties: false
+        UpsertUserPayload:
+          required:
+            - customerName
+            - email
+            - firstName
+            - lastName
+            - mobile
+            - role
+          type: object
+          properties:
+            customerName:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            mobile:
+              type: string
+              nullable: true
+            role:
+              type: string
+              nullable: true
+          additionalProperties: false
+        UpsertUserWithMobileChangePayload:
+          required:
+            - customerName
+            - email
+            - firstName
+            - lastName
+            - mobile
+            - previousMobile
+            - role
+          type: object
+          properties:
+            customerName:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            mobile:
+              type: string
+              nullable: true
+            role:
+              type: string
+              nullable: true
+            previousMobile:
+              type: string
+              nullable: true
+          additionalProperties: false
+        UserAccountModel:
+          required:
+            - email
+            - firstName
+            - id
+            - lastName
+            - mobile
+            - role
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            mobile:
+              type: string
+              nullable: true
+            role:
+              type: string
+              nullable: true
+          additionalProperties: false
+      securitySchemes:
+        Bearer:
+          type: http
+          description: Please enter token
+          scheme: Bearer
+          bearerFormat: JWT
+  meta:
+    id: spc_e718fb471e314bba855c6aaa51635b0b
+    created: 1781614382099
+    modified: 1781614382100

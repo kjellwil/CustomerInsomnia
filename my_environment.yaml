@@ -1,0 +1,15 @@
+type: environment.insomnia.rest/5.0
+schema_version: "5.1"
+name: Shared Local - Lyse Energi
+meta:
+  id: wrk_7ef1506f6b3e4b2282c40e8ac93b2349
+  created: 1781615987416
+  modified: 1781615987416
+  description: ""
+environments:
+  name: Base Environment
+  meta:
+    id: env_d363cb0846d1428663ecf8e5f9fa1126b9440bff
+    created: 1781615987421
+    modified: 1781615987421
+    isPrivate: false
